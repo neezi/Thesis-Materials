@@ -1,0 +1,309 @@
+%==============================================%
+%					       %
+%	      <<LaTeX Source Code>>	       %
+%					       %
+%		 Nick Miladinovic		       %
+%					       %
+%	Dept. of Physics and Astronomy	       %
+%		  McMaster Uni		       %
+%					       %
+%     Email: Nickcvic@gmail.com     %
+%					       %
+%	        (April 2016) 	       %
+%					       %
+%==============================================%
+
+
+\documentclass[ 12pt,
+		twoside,%oneside
+		letterpaper, 
+		openright
+	      ]{book}
+
+%
+%
+%
+%__________PACKAGES_________
+\usepackage{graphicx}
+\usepackage{makeidx} % SEE \makeindex before \begin{document}
+\usepackage[tmargin=1.5in,bmargin=1in,lmargin=1.5in,rmargin=1.5in]{geometry}  %For TWOSIDE TO WORK, COMMENT OUT THIS LINE!
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{sidecap}
+\usepackage{enumitem}
+\usepackage{simplewick}
+%\usepackage{subfig}  %\def\subfigcapskip{10pt}
+%\usepackage{feynmf}
+\usepackage{feynmp}   \unitlength = .075mm \DeclareGraphicsRule{*}{mps}{*}{} % USE>> mpost Feynman_Graphs.mp TO GENERATE GRAPHS
+%\usepackage{sparticles}
+%\usepackage{pstricks \psset{unit=.5mm}
+%\usepackage{wrapfig} 
+\usepackage{comment}
+\usepackage[table]{xcolor}  %\cellcolor[gray]{0.9} 
+%\usepackage{multirow}
+\usepackage{soul}
+\usepackage{caption}   \captionsetup[figure]{labelfont=bf}
+\usepackage{subcaption}
+\usepackage{float}  % To fix the position of figures using [H]
+%\usepackage{todo} 
+\usepackage{bm}
+\usepackage{braket}
+\usepackage[
+	 colorlinks=true
+	,urlcolor=violet
+	,anchorcolor=blue
+	,citecolor=magenta
+	,filecolor=blue
+	,linkcolor=blue
+	,menucolor=blue
+	,pagecolor=blue
+	,linktocpage=true
+	,pdfproducer=medialab
+	%,hidelinks
+]{hyperref}
+\usepackage[square,numbers]{natbib}
+%\usepackage{chapterbib} % To have the references at the end of each Chapter. Needs running bibtex not only for FILE.bib but also Chapter01.bib etc.
+\usepackage[titletoc]{appendix}
+\usepackage{fancyhdr}
+%\usepackage[pagestyles]{titlesec}
+%\usepackage{lipsum}
+\usepackage[Lenny]{fncychap} %Options: Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup
+	%\ChNumVar{\fontsize{76}{80}\usefont{OT1}{pzc}{m}{n}\selectfont} %ONLY FOR "Bjornstrup"
+	%\ChTitleVar{\raggedright\Large\sffamily\bfseries} %ONLY FOR "Bjornstrup"
+\usepackage{tocloft} %[titles]
+%\usepackage[tc]{titlepic}
+%\usepackage[center]{titlesec}
+\usepackage{setspace} 
+\usepackage{etoolbox} 
+\usepackage{lastpage}
+\usepackage[fit]{truncate} 
+\usepackage{todonotes} % TO ADD NOTES IN YOUR DRAFT, e.g.,\todo[linecolor=red!70!white, backgroundcolor=blue!20!white,bordercolor=red]{CITE A COLOURFUL PAPER}
+
+%To Have Bibliography at the end each Chapter:	
+	%\usepackage{chapterbib}
+	% DO NOT forget to add \bibliographystyle{plainnat}  \bibliography{../Bibliography} to the end of each chapter.
+	%Visit: http://texdoc.net/texmf-dist/doc/latex/cite/chapterbib.pdf
+
+\usepackage{calligra} % FOR calligraphic font
+\usepackage[T1]{fontenc}
+\usepackage{siunitx} %For SI Units,...  
+
+\definecolor{light-gray}{gray}{0.95}
+\usepackage{cancel}
+\usepackage{soul} %To strikethrough using \st{TEXT} 
+		  %\setulcolor{red}  %set underlining color
+		  \setstcolor{red}   %set overstriking color
+		  %\sethlcolor{blue} %set highlighting color
+		  \setul{1ex}{0.2ex} %set line thickness
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}  %Use \blue{TEXT} 
+\newcommand{\red}[1]{\textcolor{red}{#1}}  %Use \red{TEXT}
+
+%\usepackage[bottom]{footmisc}
+
+%___________________________
+%
+%
+%
+%
+%
+%
+%___________TWEAKS__________
+
+\makeindex
+
+%TITLE & AUTHOR
+\input{./TeX-Files/Author_and_Title.tex}
+
+%___________________________
+%
+%
+%          
+%
+%
+%=================================================
+\begin{document}
+%
+%
+%
+%
+%______FRONT_MATTER_______               
+
+\frontmatter
+
+\thispagestyle{empty}
+\begin{flushleft}
+	\vspace*{\fill}
+	\begin{center}
+	{\bfseries \MakeUppercase \ThesisTitle}
+	\end{center}
+	\vspace*{\fill}
+	\vspace*{\fill}
+\end{flushleft}
+
+\newpage  
+
+\setcounter{page}{1}
+\begin{titlepage}
+	\vspace*{\fill}
+	\begin{center}
+	{\large\bfseries \MakeUppercase \ThesisTitle}
+
+	\vspace{1cm}
+
+	{By}\\ 
+
+	\vspace{1cm}
+
+	{{\bfseries \MakeUppercase\ThesisAuthor}, \AuthorsPreviousDegreesFirstPage}\\
+
+ 	\vspace{4cm}
+
+	{A Thesis}\\
+	{Submitted to the School of Graduate Studies}\\
+	{in Partial Fulfilment of the Requirements}\\
+	{for the Degree}\\ 
+	{\ThesisDegreeLong}
+
+ 	\vspace{4cm}
+	\vspace*{\fill}
+
+	{\ThesisInstitution}\\ 
+	{\copyright Copyright by \ThesisAuthor, \ThesisYear}
+	\end{center}
+	\vspace*{\fill}
+\end{titlepage}
+
+
+\pagestyle{plain} %\pagestyle{fancy} 
+\cfoot{\thepage} \lhead{}\chead{}%\rhead{}
+
+\newpage
+\begin{minipage}[l]{\textwidth}
+	\begin{tabular}{p{8.5cm} l}
+		  {\MakeUppercase\ThesisDegreeLong} (\ThesisYear)
+		& \ThesisInstitution
+		\\
+		  (Physics)
+		& Hamilton, Ontario
+	\end{tabular}
+	
+	\vspace{1.5cm}
+
+	\begin{tabular}{l p{.6\textwidth} c}
+		{ TITLE:} & \ThesisTitle
+		\\ \\
+		{ AUTHOR:} & \ThesisAuthor, \AuthorsPreviousDegrees
+		\\ \\
+		{ THESIS ADVISER:} & \ThesisAdviser
+		\\ \\
+		{ NUMER OF PAGES:} & \pageref{lastoffront} , \pageref{LastPage}
+	\end{tabular}
+\end{minipage}
+\newpage       
+
+\input{./TeX-Files/Abstract.tex} 
+\newpage         
+\input{./TeX-Files/Acknowledgements.tex}    
+\newpage
+\input{./TeX-Files/Dedication.tex}  
+\newpage
+\input{./TeX-Files/Preface.tex}
+     
+\newpage     
+\phantomsection
+\addcontentsline{toc}{chapter}{Table of Contents} 
+\tableofcontents 
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Figures}           
+\listoffigures 
+
+\cleardoublepage
+\phantomsection 
+\addcontentsline{toc}{chapter}{List of Tables}               
+\listoftables   
+
+  
+\label{lastoffront} %FOR COUNTING PAGES...  
+
+%___________________________           
+%
+%
+%
+%
+%______MAIN_MATTER________
+\mainmatter
+
+%MAIN MATTER PAGESTYLE
+\pagestyle{fancy}
+\fancyhead[LO]{\truncate{.95\headwidth}{\leftmark}} %{\thechapter}
+\fancyhead[RO]{}
+\fancyhead[LE]{\ThesisInstitution}
+\fancyhead[RE]{\ShortThesisAuthor \,\,-- \ThesisDegreeShort}
+\fancyfoot[C]{\thepage}
+
+%CHAPTERS
+\doublespacing %\singlespacing
+
+
+\begin{fmffile}{Feynman_Graphs}  %FOR FEYNMAN DIAGRAMS
+
+\input{./TeX-Files/Chapter_1.tex}
+\input{./TeX-Files/Chapter_2.tex}
+\input{./TeX-Files/Chapter_3.tex}
+\input{./TeX-Files/Chapter_4.tex}
+\input{./TeX-Files/Chapter_5.tex}
+\input{./TeX-Files/Chapter_6.tex}
+
+\singlespacing
+
+%APPENDICES
+\begin{appendices}
+\appendixpage
+\noappendicestocpagenum
+\input{./TeX-Files/Appendix_I.tex}
+\input{./TeX-Files/Appendix_II.tex} 
+%\input{./TeX-Files/Appendix_III.tex} 
+%\input{./TeX-Files/Appendix_IV.tex} 
+\end{appendices}
+
+
+\end{fmffile} %FOR FEYNMAN DIAGRAMS
+
+%___________________________
+%
+%
+%
+%
+%
+%_______BACK_MATTER_______
+\backmatter
+
+\singlespace %TO AVOID DOUBLE-SPACE BIBLIOGRAPHY & INDEX!
+
+%BIBLIOGRAPHY and INDEX PAGESTYLE
+\pagestyle{plain} 
+\cfoot{\thepage} \lhead{}\chead{}%\rhead{} 
+
+%BIBLIOGRAPHY
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{Thesis}
+\bibliographystyle{apsrev4-1}%{apsrev4-1}%{amsplain}%{ieeetr}%{unsrtnat}%{plainnat}
+
+%INDEX
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Index}
+\printindex
+
+
+
+%___________________________
+%
+%
+%
+%
+\end{document}
+%=================================================

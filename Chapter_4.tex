@@ -1,0 +1,165 @@
+%================================================================
+\chapter{Quantum Representations}
+\chaptermark{QR}
+%================================================================
+
+
+
+\section{Introduction}
+\label{sec:intro}
+
+In this section, we show that while both forms of the electromagnetic momentum density are correct, they speak to different representations of the Hamiltonian. They are linked to two different representations of the direct coupling Hamiltonian which we show to be tied intimately with the Aharonov-Casher and the He-McKellar-Wilkens geometric phase.  The phases naturally arise as a result of enforcing invariance in the equations of motion.
+The Abraham and Minkowski representations are shown to be related through a unitary transformation which gives rise to both the HMW and the AC phase. 
+
+\section{The Abraham/Minkowski representation}
+\label{sec:DC}
+
+We begin with the direct coupling Lagrangian for a polarizable/magnetizable atom interacting with an electromagnetic field \cite{thirunamachandran}
+\begin{eqnarray}
+L&=&\frac{1}{2}mv^2+\frac{\epsilon_0}{2}\int\left(\dot{A}^2-c^2\left(\nabla\times \mathbf{A}\right)^2\right)\,d^3\mathbf{r} \nonumber \\
+ &-&\int\left(\mathbf{P}\cdot\dot{\mathbf{A}}\right)\,d^3\mathbf{r}+\int\left( \left[\nabla\times\mathbf{M}\right]\cdot\mathbf{A}\right)\,d^3\mathbf{r}
+\end{eqnarray}
+Where $\mathbf{A}$ is the vector potential, $\mathbf{P}$ is the polarization , and $\mathbf{M}$ is the magnetization.  
+Grouping terms we get
+\begin{eqnarray}
+L&=&\frac{1}{2}mv^2+\frac{1}{2}\int\left(-\dot{\mathbf{A}}\cdot\left(-\epsilon_0\dot{\mathbf{A}}+\mathbf{P}\right)\right)\,d^3\mathbf{r} \nonumber \\
+&-&\int\left( \left(\nabla\times \mathbf{A}\right)\cdot\left(\frac{1}{\mu_0}\nabla\times \mathbf{A}-\mathbf{M}\right)\right)\,d^3\mathbf{r} 
+\end{eqnarray}
+Using the definitions for the electric and magnetic fields
+\begin{eqnarray}
+\mathbf{E}&=&-\frac{\partial \mathbf{A}}{\partial t} \\
+\mathbf{B}&=&\nabla\times\mathbf{A}
+\end{eqnarray}
+along with the auxiliary field definitions
+\begin{eqnarray}
+\mathbf{D}&=&\epsilon_0\mathbf{E}+\mathbf{d}\delta\left(\mathbf{r}-\mathbf{r}_{\mathrm{atom}}\right) \\
+\mathbf{H}&=&\frac{1}{\mu_0}\mathbf{B}-\mathbf{m}\delta\left(\mathbf{r}-\mathbf{r}_{\mathrm{atom}}\right)
+\end{eqnarray}
+we arrive at a simplified representation given in terms of the electric and magnetic fields
+\begin{eqnarray}
+L&=&\frac{1}{2}mv^2 + \frac{1}{2}\int\left(\mathbf{D}\cdot\mathbf{E}-\mathbf{H}\cdot\mathbf{B}\right)\,d^3\mathbf{r} \nonumber \\
+&=&\frac{1}{2}mv^2 + \frac{1}{2}\int\left(\epsilon E^2-\frac{1}{\mu}B^2\right)\,d^3\mathbf{r} 
+\label{lagrangian1}
+\end{eqnarray}
+
+This is not the full Lagrangian yet. In the atom's reference frame the Lorentz transformed fields are $\bar{\mathbf{E}}=\mathbf{E}+\mathbf{v}\times\mathbf{B}$ and $\bar{\mathbf{B}}=\mathbf{B}-\epsilon_0\mu_0\left(\mathbf{v}\times\mathbf{E}\right)$ (to first order in v/c). The actual electric field that the atom interacts with is not the electric field as seen in the lab frame, but the Lorentz transformed field as seen in the atom's frame.  Hence, the true Lagrangian is
+\begin{eqnarray}
+&L&=\frac{1}{2}mv^2 + \frac{1}{2}\int\left(\mathbf{D}\cdot\mathbf{E}-\mathbf{H}\cdot\mathbf{B}\right)\,d^3\mathbf{r} \nonumber \\
+&-& \int\mathbf{v}\cdot\left(\mathbf{D}\times\mathbf{B}\right)\,d^3\mathbf{r}
++ \int\mathbf{v}\cdot\frac{\mathbf{E}\times\mathbf{H}}{c^2}\,d^3\mathbf{r} + \mathrm{H.O.}
+\label{lagrangian2}
+\end{eqnarray}
+The canonical momentum for the atom is then
+\begin{eqnarray}
+\mathbf{p}&=&m\mathbf{v}- \int\left(\mathbf{D}\times\mathbf{B}-\frac{\mathbf{E}\times\mathbf{H}}{c^2}\right)\,d^3\mathbf{r} \nonumber \\
+&\equiv & m\mathbf{v}-\mathbf{d}\times\mathbf{B}-\frac{\mathbf{E}\times\mathbf{m}}{c^2}
+\label{canonical}
+\end{eqnarray}
+Here $\mathbf{d}$ and  $\mathbf{m}$ are the electric and magnetic dipole moments respectively.  The corresponding Hamiltonian is then found to be
+\begin{eqnarray}
+H&=&\frac{1}{2m}\left(\mathbf{p}+ \mathbf{d}\times\mathbf{B}+\frac{\mathbf{E}\times\mathbf{m}}{c^2}\right)^2\nonumber \\
+&+&\frac{1}{2}\int\left(\mathbf{D}\cdot\mathbf{E}+\mathbf{H}\cdot\mathbf{B}\right)\,d^3\mathbf{r}
+\label{hamilton1}
+\end{eqnarray}
+The corresponding Schr\"{o}dinger equation for the Hamiltonian
+\begin{eqnarray}
+i\hbar\dot{\psi}&=&\frac{1}{2m}\left(\mathbf{p}+ \mathbf{d}\times\mathbf{B}+\frac{\mathbf{E}\times\mathbf{m}}{c^2}\right)^2\psi\nonumber \\
+&+&\left(\frac{1}{2}\int\left(\mathbf{D}\cdot\mathbf{E}+\mathbf{H}\cdot\mathbf{B}\right)\,d^3\mathbf{r}\right)\,\psi \nonumber\\
+\label{schrodinger1}
+\end{eqnarray}
+The last term in Eq.\ (\ref{schrodinger1}) may be rewritten by making use of Poynting's theorem  \cite{griffiths}
+\begin{equation}
+\mathbf{E}\cdot\mathbf{J}_{\mathrm{f}}=-\frac{1}{2}\frac{\partial}{\partial t}\left(\mathbf{D}\cdot\mathbf{E}+\mathbf{B}\cdot\mathbf{H}\right)-\nabla\cdot\left(\mathbf{E}\times\mathbf{H}\right)
+\label{poynting1}
+\end{equation}
+Since there are no free currents, $\mathbf{J}_{\mathrm{f}}=0$.  This allows us to write
+\begin{equation}
+\frac{1}{2}\left(\mathbf{D}\cdot\mathbf{E}+\mathbf{B}\cdot\mathbf{H}\right)=-\int\nabla\cdot\left(\mathbf{E}\times\mathbf{H}\right)\,\,dt'
+\label{poynting2}
+\end{equation}
+We can rewrite the second term in  Eq.\ (\ref{poynting2}) through a change in variable which leads to
+\begin{eqnarray}
+&&\nabla\rightarrow\frac{1}{c}\frac{\partial}{\partial t}\\
+&&\int\,dt\rightarrow\frac{1}{c}\int\,d\mathbf{r}'
+\end{eqnarray}
+Thus Poynting's theorem allows us to write
+\begin{equation}
+\frac{1}{2}\left(\mathbf{D}\cdot\mathbf{E}+\mathbf{B}\cdot\mathbf{H}\right)=-\frac{\partial}{\partial t}\int\left(\frac{\mathbf{E}\times\mathbf{H}}{c^2}\right)\cdot\,dl
+\label{poynting3}
+\end{equation}
+Substituting this into Eq.\ (\ref{schrodinger1}) gives
+\begin{eqnarray}
+i\hbar\dot{\psi}&=&\frac{1}{2m}\left(\mathbf{p}+ \mathbf{d}\times\mathbf{B}+\frac{\mathbf{E}\times\mathbf{m}}{c^2}\right)^2\psi\nonumber \\
+&-&\left(\frac{\partial}{\partial t}\int \mathbf{S}_{\mathrm{Abr}}\cdot\,dl\right)\,\psi \nonumber\\
+\label{schrodinger3}
+\end{eqnarray}
+This is what we will call the Abraham representation. The first term on the right is the kinetic momentum of the atom, while the second term is the energy due to the Abraham momentum 
+\begin{equation}
+\mathbf{S}_{\mathrm{Abr}}=\int\frac{\mathbf{E}\times\mathbf{H}}{c^2}\,d^3\mathbf{r}
+\end{equation}
+Both the AC and the HMW effect originate in this representation as dynamic phases through the kinetic momentum \cite{boyd}
+\begin{equation}
+m\mathbf{v}=m\frac{\partial H}{\partial \mathbf{p}}=m\left(\mathbf{p}+ \mathbf{d}\times\mathbf{B}+\frac{\mathbf{E}\times\mathbf{m}}{c^2}\right)
+\end{equation}
+
+
+ The Abraham representation is in no ways unique.  We can transform the Sch\"{o}dinger equation into the Minkowski representation through a unitary transformation by writing the wave function as
+\begin{equation}
+\mathrm{\psi=\Psi\exp{\left[-\frac{\mathrm{i}}{\mathrm{\hbar}}\int\mathbf{S}\cdot d\mathbf{l}\right]}}
+\label{minkrep}
+\end{equation}
+Where $\mathbf{S}=\mathbf{d}\times\mathbf{B}+\epsilon_0\mu_0\mathbf{E}\times\mathbf{m}$. Substituting this back into Eq.\ (\ref{schrodinger3}) gives us
+\begin{eqnarray}
+&&i\hbar\dot{\Psi}\,\,\exp{\left[-\frac{i}{\hbar}\int\mathbf{S}\cdot d\mathbf{l}\right]} \nonumber \\
+&+&\Psi\,\left(\frac{\partial}{\partial t}\int\mathbf{S}\cdot d\mathbf{l}\right)\,\exp{\left[-\frac{i}{\hbar}\int\mathbf{S}\cdot d\mathbf{l}\right]}\nonumber \\
+&=&-\frac{\hbar^2\left(\nabla^2\Psi\right)}{2m}\,\exp{\left[-\frac{\mathrm{i}}{\hbar}\int\mathbf{S}\cdot d\mathbf{l}\right]} \nonumber\\
+&-& \left(\frac{\partial}{\partial t}\int\frac{\mathbf{E}\times\mathbf{H}}{c^2}\cdot\,d\mathbf{l}\right)\,\Psi\,\exp{\left[-\frac{i}{\hbar}\int\mathbf{S}\cdot d\mathbf{l}\right]}
+\label{schrodinger4}
+\end{eqnarray}
+Cancelling out the unitary term and rearranging gives
+\begin{equation}
+i\hbar\dot{\Psi}=\frac{\mathbf{p}^2}{2m}\Psi 
+ -\left(\frac{\partial}{\partial t}\int \mathbf{S}_{\mathrm{Min}}\cdot d\mathbf{l}\right)\Psi 
+\label{schrodinger5}
+\end{equation}
+Here the first term on the right is the canonical momentum of the atom, while the second term is now the energy due to the Minkowski momentum
+\begin{equation}
+\mathbf{S}_{\mathrm{Min}}=\int\left(\mathbf{D}\times\mathbf{B}\right)\,d^3\mathbf{r}
+\end{equation}
+  As both representations are equally valid, we have arrived at the well known relationship between the kinetic/canonical momentum of an atom and the Abraham/Minkowski momentum of the interacting electromagnetic field
+\begin{equation}
+m\mathbf{v}+\mathbf{S}_{\mathrm{Abr}}=\mathbf{p}+\mathbf{S}_{\mathrm{Min}}
+\end{equation}
+
+\vspace{5mm}
+
+Suppose now we know the ground state wave function of the system beforehand $\psi_0$. From Eq.\ (\ref{minkrep}) we see if we decided to use the Minkowski formulation and naively plugged in $\Psi=\psi_0$, we would obtain an incorrect result.  Using the Minkowski representation forces us to use the initial wave function 
+\begin{equation}
+\Psi=\psi_0\exp{\left[-\frac{\mathrm{i}}{\mathrm{\hbar}}\int \left(\mathbf{d}\times\mathbf{B}+\frac{\mathbf{E}\times\mathbf{m}}{c^2}\right)\cdot d\mathbf{l}\right]}
+\end{equation}
+This is precisely the Aharonov-Casher and the He-McKellar Wilkens phase.  The AC and HMW effect appear in the Minkiowski representation as geometric phases, in contrast to the dynamic phase portrayal in the Abraham representation.   
+
+\section{Conclusion}
+\label{conclusion}
+
+We began by showing how the classical Lagrangian for a polarizable/magnetizable atom interacting with an electromagnetic field must be modified by considering the Lorentz transformed interactions as seen from the atom's reference frame.  We were then able to show that the corresponding Hamiltonian yielded the Abraham momentum through Poynting's theorem. By transforming the field through the unitary transformation
+\begin{equation}
+\exp{\left[-\frac{\mathrm{i}}{\mathrm{\hbar}}\int\left(\mathbf{d}\times\mathbf{B}+\frac{\mathbf{E}\times\mathbf{m}}{c^2}\right)\cdot d\mathbf{l}\right]}
+\label{transform}
+\end{equation}
+We were able to produce the Minkowski momentum for the field, at the expense of transforming the kinetic momentum of the atom into the canonical momentum
+\begin{equation}
+\mathbf{p}_{\mathrm{canonical}}=m\mathbf{v}- \mathbf{d}\times\mathbf{B}-\frac{\mathbf{E}\times\mathbf{m}}{c^2}
+\label{canonical}
+\end{equation}
+This lead us to the well known relationship between the kinetic/canonical momentum of the atom with the Abraham/Minkowski electromagnetic momentum 
+\begin{equation}
+m\mathbf{v}+\mathbf{S}_{\mathrm{Abraham}}=\mathbf{p}_{\mathrm{canonical}}+\mathbf{S}_{\mathrm{Minkowski}}
+\end{equation}
+We then showed that in using the Minkowski representation, we require the initial state function $\psi_0$ to be modified by the phase factor in Eq.\ (\ref{transform}). This generated the AC phase $\phi_{\mathrm{AC}} = -(\hbar c^2)^{-1} \oint [\mathbf{E}(\mathbf{r}) \times \mathbf{m}] \cdot dl $ along with the HMW phase $\phi_{\mathrm{HMW}} = \hbar^{-1} \oint [\mathbf{B}(\mathbf{r}) \times \mathbf {d}] \cdot dl $.  
+Finally we showed that the AC/HMW effect may be interpreted as emerging from a dynamic or a geometric phase depending on the representation.
+
+
+
+
+%================================================================

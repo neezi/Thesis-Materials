@@ -1,0 +1,104 @@
+%================================================================
+\chapter{Introduction}
+%\chapter[toc version]{doc version}
+\chaptermark{Introduction}
+
+Condensed matter physics concerns itself with the study of matter in its condensed form, where interactions between constituent particles cannot be neglected and one is typically faced with a stupendous complexity. At the first look, the task of understanding such highly-correlated systems might seem hopeless as most attributes of these systems, \textit{e.g.}, ground-state energy, crucially depend on the precise details of interactions. Even if one ascertains the precise details of interactions, these systems contain such large number of particles that any first-principle approach becomes impossible. Fortunately, in practice, we are only interested in certain macroscopic observables such as magnetization, comprehensibility, conductance, etc. This way, many condensed matter systems with different microscopic details can be viewed equivalent in the sense that they share the same macroscopic behavior. Any equivalence relation entails a classification, and in condensed matter physics the equivalence classes that are defined base the same macroscopic properties are labelled by phases and are referred to as \textit{universality classes}. 
+
+What underlies this simple intuitive picture is the notion of effective models: Curiously, the underlying idea behind this simple intuitive reasoning is very profound and has revolutionized the way we think about not only condensed matter systems, but also theories in high-energy physics.  
+
+
+
+History of modern physics is full of instances of cross-fertilization of ideas between seemingly unrelated fields. Condensed matter and high-energy physics are two fields that have particularly benefited from the intuition gained in each other. The prominent examples are the \textit{Anderson-Higgs} mechanism, the development of \textit{bosonization}, \textit{topological field theories} in two dimensions, \textit{renormalization group} (RG) and recently the \textit{holography} ideas. Perhaps the most remarkable and influential of these is renormalization group. RG emerged from the early works of high-energy and condensed matter physicists and in particular Gelmann, Low, Callen, Symanzic and Kadanoff and ultimately was given a precise mathematical formulation by Wilson for which he was awarded the Wolf prize in 1980 and the Nobel prize in physics in 1982.
+
+
+RG has dramatically revolutionized the way we think about various condensed matter systems as well as high-energy theories. What is at the heart of RG is the concept of \textit{effective field theories} (EFT): the idea that, since in practice when probing a system one is always limited by the resolution of the probe, for all intents and purposes one can replace the microscopic description of the system under inspection with another one that provides an accurate description as long as one is interested in properties that are ``low-energy''. The concept of EFTs are very familiar to practitioners in condensed matter physics, and have provided us with an entirely new way of thinking about field theories in high-energy physics. \todo[linecolor=red!70!white, backgroundcolor=blue!20!white,bordercolor=red]{\small CITE Polchinski 1984} In fact, condensed matter systems are often used as intuitive and pedagogical examples of EFTs. \todo[linecolor=red!70!white, backgroundcolor=blue!20!white,bordercolor=red]{\small CITE Polchinski's TASI lectures 199(?)}. 
+
+
+
+
+\begin{comment} COMMENTED OUT ON APRIL 10, 2014
+Condensed matter physics concerns itself with the study of matter in its condensed form, where interactions between constituents atoms or molecules cannot be neglected and one is typically faced with a stupendous complexity. Yet matter is nothing but an enormous aggregate ($\sim10^{24}$) of atoms, which, in turn, are composed of subatomic particles. Decades of research in high-energy physics culminated in the \emph{standard model}, which provides a very detailed and precise description of subatomic particles and the interactions among them. Put this way, one might naively conclude that there could hardly be any surprises in condensed matter systems and condensed matter physics should be regarded as applied high-energy physics. What underlies such a conception is \emph{reductionism} -- the view that the whole, no matter how complex, is, in all aspects, the sum of its constituents.\footnote{Note that by reductionism we neither mean \emph{constituent reductionism}, which states a complex system is nothing but the sum of its constituents (\textit{e.g.}, a living being is nothing but a collection of its constituent organic molecules and not any extra ``spark of life'' or ``spirit''), nor \emph{causal reductionism}. In fact, these two types of reductionism underlie physics and are widely accepted among physicists. What we intend here by reductionism is \emph{conceptual reductionism}, which holds that the concept applicable to the whole system is reducible to the concepts that apply to the constituents.} While such a reductionist view might seem plausible, there are myriad of complex systems in nature that seem to not fit the reductionist paradigm. Indeed, it is so difficult to attribute, for example, intelligence in a highly complex system like human brain to the properties of its constituent elements that metaphysical explanations become more palatable. 
+
+
+While the question of whether reductionism is fundamentally limited or not\footnote{A simple back-of-the-envelope calculation [\textcolor{blue}{CITE X.G. WEN}] shows that even only restoring the quantum state of a magnetic sample of localized spin-$\frac{1}{2}$s of the size of a sugar cube, in the crudest approximation, will require a classical computer larger than all the atoms in the known universe. However, it is believed that a quantum computer will be capable of dealing with problems that seem practically so impossible that one might as well consider them in principle impossible.}
+ might seem a purely philosophical issue, it gains relevance in disciplines like condensed matter physics, where the goal is to describe very complex systems. Anderson~\cite{Anderson1972} was the first one in the condensed matter community who realized the significance of this question and drew the attention of practitioners to it in his seminal ``More is different'' article in 1972. He advocated in favour of a holistic approach as opposed to a reductionist view, and argued that \emph{emergence} -- the notion that at each level of complexity qualitatively new behavior can arise -- is the more appropriate way of thinking about highly complex systems. As Anderson pointed out, emergence is, in fact, not unfamiliar to physicists: we believe that fundamental particles and forces between them are all isotropic and many experiments have supported this, yet our world is full of anisotropic objects. This disparity between microscopic and macroscopic worlds is explained based on the remarkable phenomena of \emph{spontaneous symmetry breaking}\todo[linecolor=red!70!white, backgroundcolor=blue!20!white,bordercolor=red]{\small CITE Weinberg's Book, 2nd Vol}, which Anderson heavily exploited in his argument.
+
+
+Spontaneous symmetry breaking can be explained in the context of a simple example: a ferromagnet in two or three dimensions. Imagine a system consisted of spins (say, spin-1/2) situated at the sites of a lattice such that each spin only interacts with its nearby spins ferromagnetically, \textit{i.e.}, spins tend to align, without any preferred direction. Then the Hamiltonian of this system is insensitive to simultaneously rotating all the spins (a global rotation). Thus we expect any configuration where all spins point in the same direction to be a ground-state. In reality, there are always fluctuations present (quantum and/or thermal due to interactions with the environment or other sources), which are expected to result in a superposition of all possible degenerate ground-sates. However, the fact that there exist ferromagnets in the real world seems to contradict this expectation. Somehow, the ferromagnet gets stuck in one of the infinitely many degenerate ground-states and does not tunnel to other ones. The resolution is that in a very large system with many spins, the probability of such a tunnelling event is practically zero. This is because of a very large energy barrier (proportional to the system size) that makes such an event highly unlikely. The only way that this can be circumvented is by imparting enough energy to the system. Superconductivity and superfluidity are other famous instances of spontaneous symmetry breaking.  
+
+
+Interestingly, for a long time it was believed in condensed matter that various states of matter can be uniquely characterized solely based on their symmetries. Thus, it was assumed that emergence in condensed matter systems was limited to spontaneous symmetry breaking. This view was perfected into the celebrated Landau-Ginzburg-Wilson paradigm of phases and phase transitions. This, together with Landau's Fermi-liquid theory provided the pillars of what one might consider conventional condensed matter. Both paradigms have been spectacularly successful in explaining numerous real systems. It is worth mentioning that these paradigms, in a sense, are not perfect instances of emergence and perhaps can accommodate a weaker version of reductionism. Take Landau's Fermi liquid theory for instance; it states that interacting electrons in a normal metals can be thought of as fermionic quasi-particles with the same quantum numbers as the original electrons (spin, etc.), but with a renormalized mass due to the interactions. 
+
+
+Surely nature never ceases to surprise us. In the 1980s, a series of experiments found results that could not be explained based on the aforementioned conventional paradigms. These, together with subsequent theoretical discoveries, made it abundantly clear that emergence in condensed matter systems is not limited to spontaneous symmetry breaking. It is truly remarkable that there are instances of emergenent states where, unlike in spontaneous symmetry breaking, the symmetry is enlarged or even one finds low-energy excitations that behave in a way completely distinct from the microscopic degrees of freedom. Some well-known instances of such exotic emergent phenomena are, spin and charge separation in one dimension, anyoinc excitations and charge fractionalization in two dimensions, fermionic spinons and emergent gauge fields in purely bosonic systems\todo[linecolor=red!70!white, backgroundcolor=blue!20!white,bordercolor=red]{\small Add citations}. 
+
+
+The central challenge in theoretical condensed matter physics is to identify and characterize emergent phases in systems that one only has access to a microscopic description for. There are not many models that can be exactly solved, and those that admit an exact solution, are usually trivial (conformal field theories in one spatial dimension and a few other so-called integrable models are some of the exceptions). When the system that one is interested in is not perturbative, \textit{i.e.}, cannot be regarded as a weakly perturbed soluble model, there is no general reliable recipe.
+\footnote{In some special cases weak-strong coupling (Kramers-Wannier) dualities (\textit{e.g.}, Boson-Vortex duality in 2D or a $\mathbb{Z}$ gauge field model on a cubic lattice and 3D Ising model) or self-dualities (\textit{e.g.}, 2D Ising model) might allow one to solve or at least systematically treat a non-perturbative problem. Another class of non-perturbative models that can be handled are certain one-dimensional models, where yield to Bosonization that we describe later in this thesis. Recently, holography has provided another way to understand some strongly correlated systems.}
+ Nonetheless, one might be able to gain some insight from a mean-field approach or field-theoretical approaches such as the large-N approximation, where one increases the ``flavor'' number in hope of finding a saddle-point description. On the contrary, when the problem can be regarded as a soluble model (\textit{e.g.,} non-interacting bosons or fermions), weakly perturbed by some additional interactions, one might be able to make some progress. If the perturbation does not result in any qualitative change, \textit{i.e.}, a phase transition to another state, the problem can be handled trivially using the machinery of perturbation theory and the model is said to be adiabatically connected to the non-perturbed one. A prime example of such a scenario is Landau's Fermi-liquid theory. However, usually the perturbation, no matter how weak, induces a phase transition. Conventional superconductivity, brought about by the presence of arbitrarily weak attractive interactions between quasi-particles in normal metals is well-known example. 
+
+
+One might wonder if there is a way to systematically determine whether a specific perturbation in a perturbative problem is ``relevant'' or ``irrelevant'', in the sense that whether it results in a qualitatively new behavior (phase) or not. Indeed, such a framework exists and is referred to as \textit{renormalization group} (RG), which has been extensively used in modern high-energy and condensed matter physics. In fact, the scope of this framework is much wider than perturbative models, however, in practice, RG approaches best apply to perturbative problems. A concise review of RG techniques is presented in Appendix~\ref{RG}.
+
+
+The historical development of RG is, in itself, quite interesting and is a great instance of many parallel developments in condensed matter and high-energy physics. On the condensed matter side, RG was originally devised in the context of thermal critical phenomena and in its early days was used in Anderson's poor-man RG approach for the Kondo problem. In the high-energy physics community, Murray Gell-Mann and Francis E. Low in 1954 restricted the idea to scale transformations in QED and the notion of effective field theories, first articulated by Weinberg. Wilson put these ideas on a firm grounds and showed how it is done in Wilson and Kogut.
+
+
+The central idea in any RG\index{RG} scheme is... 
+
+
+In this thesis, we primarily focus on the use of RG in elucidating the physics of two instances of strongly-correlated systems.
+
+
+%==============================
+\newpage
+\subsubsection{Hubbard Model}
+
+The rich physics manifested by most of condensed matter systems stems from the overlap of the electronic orbitals of nearby atoms in a solid together with the interactions among electrons and ions. At the first glance, this problem seems intractable due to the long-range Coulomb interactions between electrons and ions. However, in a metal, due to the screening effects, the Coulomb interaction is typically screened and becomes short range. This is actually very remarkable how electrons in a strongly correlated many-body system conspire to behave as if they are (almost) non-interacting particles. Band theory exploits this fact and successfully explains why some solids are insulators (to be precise, band insulators) and others are conductors. However, band theory, due to ignoring the interactions between electrons, fails to explain Mott insulators and thus a variety of exotic phases of matter.
+
+
+Now we know that insulators are either band insulators or Mott insulators. In fact, fairly recently it became clear that band insulators themselves are either topologically trivial insulators or topological insulators, depending on certain topological features of their band structure. As of the time of writing this thesis, it remains (?!!) an open problem whether there are topological insulators driven by interactions rather than band structure. Here we focus on the distinction between band and Mott insulators. Actually, this is perhaps most clearly expressed in the original debates between Nevill Mott and John Slater.\todo[linecolor=red!70!white, backgroundcolor=blue!20!white,bordercolor=red]{\small More and Different: Notes from a Thoughtful Curmudgeon, by P. anderson}
+ 
+
+Hubbard model is a simple model for interacting electrons in a solid, that, in a way, extends the \emph{tight-binding} model and can manifest conductor-Mott insulator transition. This model was first introduced by John Hubbard.\todo[linecolor=red!70!white, backgroundcolor=blue!20!white,bordercolor=red]{\small \href{http://rspa.royalsocietypublishing.org/content/276/1365/238}{Hubbard's Paper}} This model is consisted of two competing terms a hopping (kinetic) term and a repulsion (potential) term. The hopping term induces tunnelling of fermions from one site to a nearby site on the lattice, while the repulsion term associates an energy cost to double-occupancy. The case with repulsion between adjacent sites is usually referred to as \emph{extended Hubbard model} and the analogous model for bosons is referred to as \emph{Bose-Hubbard model}.
+
+The Hubbard Hamiltonian in terms of creation and annihilation fermion operators reads:
+
+\begin{equation}
+	\mathcal{H}_{\text{\tiny Hubbard}}
+	\,=\,
+	t\sum_{\substack{\{i,j\}\\\sigma}} \big( c^{\dagger}_{\sigma,i}c_{\sigma,j} + \text{h.c.} \big) 
+	+
+	U\sum_{\substack{i\\\sigma\neq\sigma'}} 
+	\big( c^{\dagger}_{\sigma,i}c_{\sigma,i}\big)\big( c^{\dagger}_{\sigma',i}c_{\sigma',i}\big)
+\end{equation}
+where, $\sigma$ is the flavor index (typically spin) and $\{i,j\}$ indicates nearby sites which could be nearest neighbor, next-nearest neighbor, etc. A positive $U$ results in repulsion while a negative $U$ results in attraction.
+
+The Hubbard model, despite its simple and benign appearance is very rich and is notoriously difficult to deal with except in certain limits or in one spatial dimension. Suffices to say that it is widely believed that a Hubbard model describes the physics of high-temperature superconductors, but elucidating the physics of such a model, even after almost three decades from the discovery of cuprates has not yet been achieved. In one dimension, as we will discuss later, there are powerful numerical and analytic tools that allow for completely solving this model. In higher dimensions, the limit $U/t\to0$ might yield to a perturbative local RG in the continuum limit. An instance of the case where this is not possible will be discussed in Ch.~[van Hove]. The opposite limit $t/U\to0$, as shown in the next section, results in the Heisenberg Hamiltonian.  
+
+
+
+%==============================
+\newpage
+\subsection{Heisenberg Model}
+
+
+
+
+%==============================
+\newpage
+\section{Fermi Liquid Theory}
+
+
+
+
+%==============================
+\newpage
+\section{Spin-Wave Theory}
+
+\end{comment}
+
+
+
+%================================================================

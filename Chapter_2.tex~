@@ -1,0 +1,285 @@
+%================================================================
+\chapter{Cool Physics...}
+\chaptermark{Cool Physics...}
+%================================================================
+
+
+
+%==============================
+\section{Introduction}
+
+
+
+
+
+%_________________________________
+\subsection{Subsection 1}
+
+
+
+%
+\begin{figure}[htp] 
+	\begin{center}	
+		\includegraphics[width=0.8\linewidth]{./Figures/homer_simpson.png}
+        
+        	\caption[Homer...]{\justifying Homer HOMER homer Homer...}	
+		\label{Homer}
+	\end{center}
+\end{figure}
+%
+
+
+%_________________________________
+\subsection{Subsection 2}
+
+
+%
+\begin{figure}[htp] 
+	\begin{center}	
+		
+        	\begin{subfigure}[b]{.4\textwidth}
+			\centering
+        	        \includegraphics[width=0.8\linewidth]{./Figures/Torus.pdf}
+        	        \caption{Torus}
+        	        \label{Lattices:Torus}
+        	\end{subfigure}
+		\hspace{.5cm}
+        	\begin{subfigure}[b]{.4\textwidth}
+			\centering
+        	        \includegraphics[width=0.8\linewidth]{./Figures/Cylinder.pdf}
+        	        \caption{Cylinder}
+        	        \label{Lattices:Cylinder}
+        	\end{subfigure}
+
+        	\caption[Homer...]{\justifying Homer HOMER homer Homer...}	
+		\label{Lattices}
+	\end{center}
+\end{figure}
+%
+
+
+%==============================
+\newpage
+\section{Section 2}
+\label{Ch_2-Sec_2}
+
+\begin{align}	
+	\parbox{15mm}{%\mathord{%
+ 		\begin{fmfgraph*}(200,100)
+			\fmfset{arrow_len}{2mm} 
+			\fmfset{arrow_ang}{20} 
+			\fmfset{dot_size}{1mm}
+			\fmfset{wiggly_len}{2mm}
+			\fmfleft{i1,i2}
+			\fmfright{o1,o2} 
+			\fmfrpolyn{shade,label={\tiny $\Gamma^{(4)}$},label.dist=3mm}{G}{4}
+			\fmf{fermion}{i1,G1}
+			\fmf{fermion}{G2,i2}
+			\fmf{fermion}{o1,G4}
+			\fmf{fermion}{G3,o2}	
+ 		\end{fmfgraph*}
+	}
+	\,=\,
+	&
+	g
+	\parbox{15mm}{%\mathord{%
+ 		\begin{fmfgraph*}(200,100)
+			\fmfset{arrow_len}{2mm} 
+			\fmfset{arrow_ang}{20} 
+			\fmfset{dot_size}{1mm}
+			\fmfset{wiggly_len}{2mm}
+			\fmfleft{i1,i2}
+			\fmfright{o1,o2}  
+			\fmf{fermion}{i1,v1,i2}
+			\fmf{fermion}{o1,v2,o2}
+			\fmf{photon}{v1,v2}
+			\fmfdotn{v}{2}
+ 		\end{fmfgraph*}
+	}
+	\,\,-\,\,
+	\frac{g^2}{2}
+	\parbox{15mm}{%\mathord{%
+ 		\begin{fmfgraph*}(200,100)
+			\fmfset{arrow_len}{2mm} 
+			\fmfset{arrow_ang}{20}
+			\fmfset{dot_size}{1mm}
+			\fmfset{wiggly_len}{2mm}
+			\fmfleft{i1,i2}
+			\fmfright{o1,o2}  
+			\fmf{fermion}{i1,v1,i2}
+			\fmf{fermion}{o1,v4,o2}
+			\fmf{photon}{v1,v2}	
+			\fmf{fermion,left,tension=0.35}{v2,v3}
+			\fmf{fermion,left,tension=0.35}{v3,v2}
+			\fmf{photon}{v3,v4}
+			\fmfdotn{v}{4}
+ 		\end{fmfgraph*}
+	}
+	\\[1em]
+	&	
+	-
+	g^2
+	\parbox{15mm}{%\mathord{%
+		\begin{fmfgraph*}(200,100)
+			\fmfset{arrow_len}{2mm} 
+			\fmfset{arrow_ang}{20}
+			\fmfset{wiggly_len}{2mm}
+			\fmfset{dot_size}{1mm}
+			\fmfleft{i1,i2}
+			\fmfright{o1,o2}  
+			\fmf{fermion}{i1,v1}
+			\fmf{fermion}{v1,v4}
+			\fmf{fermion}{v4,o1}
+			\fmf{fermion}{o2,v3}
+			\fmf{fermion}{v3,v2}
+			\fmf{fermion}{v2,i2}
+			\fmf{photon,tension=0}{v1,v2}
+			\fmf{photon,tension=0}{v3,v4}
+			\fmfdotn{v}{4}
+		\end{fmfgraph*}
+	}
+	\,\,-\,\,
+	g^2
+	\parbox{15mm}{%\mathord{%
+		\begin{fmfgraph*}(200,100)
+			\fmfset{arrow_len}{2mm} 
+			\fmfset{arrow_ang}{20}
+			\fmfset{dot_size}{1mm}
+			\fmfset{wiggly_len}{2mm}
+			\fmfleft{i1,i2}
+			\fmfright{o1,o2}  
+			\fmf{fermion}{i1,v1}
+			\fmf{fermion}{v1,v3}
+			\fmf{fermion}{v3,o1}
+			\fmf{fermion}{i2,v2}
+			\fmf{fermion,label.side=left}{v2,v4}
+			\fmf{fermion}{v4,o2}
+			\fmf{photon,tension=0}{v1,v2}
+			\fmf{photon,tension=0}{v3,v4}
+			\fmfdotn{v}{4}
+  		\end{fmfgraph*}
+	}
+	\nonumber
+	\,.
+\end{align}
+
+\newpage
+
+
+
+
+%
+\begin{figure}%[h] 
+        \centering
+  	\vspace{1cm}
+        \begin{subfigure}[b]{0.15\textwidth}
+		 \begin{fmfgraph*}(400,200)
+			\fmfleft{i1,i2}
+			\fmfright{o1,o2}  
+			\fmflabel{$\mathbf{k}_{_4},\sigma$}{i1}
+			\fmflabel{$\mathbf{k}_{_1},\sigma$}{i2}
+			\fmflabel{$\mathbf{k}_{_3},\sigma$}{o1}
+			\fmflabel{$\mathbf{k}_{_2},\sigma$}{o2}
+			\fmf{fermion}{i1,v1,i2}
+			\fmf{fermion}{o1,v4,o2}
+			\fmf{photon,label=$g$}{v1,v2}	
+			\fmf{fermion,left,tension=0.35,label=$\sigma'$}{v2,v3}
+			\fmf{fermion,left,tension=0.35,label=$\sigma'$}{v3,v2}
+			\fmf{photon,label=$g$}{v3,v4}
+			\fmfdotn{v}{4}
+		\end{fmfgraph*}
+		\vspace{.25cm}
+                \caption{$\Pi_{\text{\tiny PH}}$}
+                \label{1loop_interaction:PH1}
+        \end{subfigure}
+	\hspace{1.5cm}
+        \begin{subfigure}[b]{0.15\textwidth}
+		\begin{fmfgraph*}(400,200)
+			\fmfleft{i1,i2}
+			\fmfright{o1,o2}  
+			\fmflabel{$\mathbf{k}_{_4}$}{i1}
+			\fmflabel{$\mathbf{k}_{_1}$}{i2}
+			\fmflabel{$\mathbf{k}_{_3}$}{o1}
+			\fmflabel{$\mathbf{k}_{_2}$}{o2}
+			\fmf{fermion}{i1,v1}
+			\fmf{fermion,label=$$,label.side=right}{v1,v3}
+			\fmf{fermion,label=$$,label.side=right}{v3,v2}
+			\fmf{fermion}{v2,i2}
+			\fmf{fermion}{o1,v4,o2}
+			\fmf{photon,tension=0,label=$g$,label.side=left}{v1,v2}
+			\fmf{photon,label=$g$}{v3,v4}
+			\fmfdotn{v}{4}
+  		\end{fmfgraph*}
+		\vspace{.25cm}
+                \caption{$\Gamma^{\text{\tiny Penguin}}_{\text{\tiny PH}}$}
+                \label{1loop_interaction:PH2}
+        \end{subfigure}
+	
+	\vspace{1.cm}
+        \begin{subfigure}[b]{0.15\textwidth}                
+  		\begin{fmfgraph*}(400,200)
+			\fmfleft{i1,i2}
+			\fmfright{o1,o2}  
+			\fmflabel{$\mathbf{k}_{_4},\sigma$}{i1}
+			\fmflabel{$\mathbf{k}_{_2},\sigma'$}{i2}
+			\fmflabel{$\mathbf{k}_{_1},\sigma$}{o1}
+			\fmflabel{$\mathbf{k}_{_3},\sigma'$}{o2}
+			\fmf{fermion}{i1,v1}
+			\fmf{fermion,label=$$}{v1,v4}
+			\fmf{fermion}{v4,o1}
+			\fmf{fermion}{o2,v3}
+			\fmf{fermion,label=$$}{v3,v2}
+			\fmf{fermion}{v2,i2}
+			\fmf{photon,tension=0,label=$g$,label.side=left}{v1,v2}
+			\fmf{photon,tension=0,label=$g$,label.side=left}{v3,v4}
+			\fmfdotn{v}{4}
+  		\end{fmfgraph*}
+		\vspace{.25cm}
+                \caption{$\Gamma^{\text{\tiny Ladder}}_{\text{\tiny PH}}$}
+                \label{1loop_interaction:PH3}
+        \end{subfigure}
+	\hspace{1.5cm}
+        \begin{subfigure}[b]{0.15\textwidth}       
+  		\begin{fmfgraph*}(400,200)
+			\fmfleft{i1,i2}
+			\fmfright{o1,o2}  
+			\fmflabel{$\mathbf{k}_{_4}$}{i1}
+			\fmflabel{$\mathbf{k}_{_3}$}{i2}
+			\fmflabel{$\mathbf{k}_{_1}$}{o1}
+			\fmflabel{$\mathbf{k}_{_2}$}{o2}
+			\fmf{fermion}{i1,v1}
+			\fmf{fermion,label=$$}{v1,v3}
+			\fmf{fermion}{v3,o1}
+			\fmf{fermion}{i2,v2}
+			\fmf{fermion,label=$$,label.side=left}{v2,v4}
+			\fmf{fermion}{v4,o2}
+			\fmf{photon,tension=0,label=$g$,label.side=left}{v1,v2}
+			\fmf{photon,tension=0,label=$g$,label.side=right}{v3,v4}
+			\fmfdotn{v}{4}
+  		\end{fmfgraph*}
+		\vspace{.25cm}
+                \caption{$\Gamma_{\text{\tiny PP}}$}
+                \label{1loop_interaction:PP}
+        \end{subfigure}
+
+        \caption[F D]{\justifying Feynman Diagrams...}
+	\label{1loop_interaction}
+\end{figure}
+%
+
+
+
+
+
+%==============================
+\newpage
+\section{Section 3}
+\label{Ch_2-Sec_3}
+
+
+\newpage
+
+
+
+
+%================================================================

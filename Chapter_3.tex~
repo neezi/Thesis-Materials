@@ -1,0 +1,60 @@
+%================================================================
+\chapter{Chapter 3}
+\chaptermark{Chapter 3}
+%================================================================
+
+Bla bla bla...
+
+
+
+
+
+%==============================
+\section{Introduction}
+
+
+
+%_________________________________
+\subsection{Previous Studies}
+
+
+
+%==============================
+\newpage
+\section{RG Analysis}
+
+
+
+%
+\begin{figure}[htp] 
+	\begin{center}	
+		\includegraphics[width=0.8\linewidth]{./Figures/Linux.png}
+        
+        	\caption[Linux figure]{\justifying Linux is awesome because...}	
+		\label{Homer}
+	\end{center}
+\end{figure}
+%
+
+
+%--------------------------------------------
+\subsection{Model} 
+
+
+
+
+
+%--------------------------------------------
+\subsection{RG Scheme}
+
+
+
+
+
+
+%==============================
+\section{Summary and Conclusions}
+
+
+
+%================================================================

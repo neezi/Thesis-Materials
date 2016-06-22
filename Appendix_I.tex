@@ -1,0 +1,257 @@
+%================================================================
+\chapter{Appendix to Chapter 2}
+\chaptermark{Appendix to Chapter 2}
+\label{Appendix_for_Ch_2}
+%================================================================
+
+  
+In this appendix I derive some of the fundamental results of this thesis. Details omitted in the body of the thesis are shown here.  In the first subsection I fully derive the Abraham representation and show all steps.  In the second subsection I show how to derive the direct coupling Hamiltonian from the minimal coupling representation.  Finally in the third subsection I show how one can derive the direct coupling Hamiltonian through a gauge transformation.
+
+
+
+%==============================
+\section{Appendix:Abraham Representation Expansion}
+\label{App_1-1}
+In this section we go through the derivation of the Abraham Hamiltonian given by Eq.\ (\ref{schrodinger2}).  Eq.\ (\ref{schrodinger3}) can be similarly derived.  The Schrodinger equation Eq.\ (\ref{schrodinger1}) is given by
+\begin{eqnarray}
+\mathrm{i\hbar\dot{\psi}}&=&\mathrm{\frac{1}{2M}\left(\mathbf{P}+ \mathbf{S}_A-\frac{\mathbf{m}\times\mathbf{E}}{c^2}\right)^2\,\Psi-\frac{1}{2}\alpha E^2\,\psi}\nonumber \\
+&-&\mathrm{\mathbf{m}\cdot\mathbf{B}\,\psi+\left(\int\left[\frac{\epsilon_0}{2}E^2+ \frac{1}{2\mu_0}B^2\right]\,dV\right)\,\psi}
+\label{schrodingerappendix1}
+\end{eqnarray}
+Here we have written 
+\begin{equation}
+\mathrm{\mathbf{S}_A=\int \left(\mathbf{D}\times\mathbf{B}\right) \, dV}
+\end{equation}
+We then apply the a unitary transformation to the wave function and write $\psi$ as
+\begin{equation}
+\mathrm{\psi=\Psi\exp{\left[-\frac{\mathrm{i}}{\mathrm{\hbar}}\int_{\gamma[0,\mathbf{r}]}\mathbf{S}_M\cdot d\mathbf{r}'\right]}}
+\label{abrahamrepappendix}
+\end{equation}
+Where the integral is a path integral between $[0,\mathrm{\mathbf{r}}]$
+This yields
+\begin{eqnarray}
+&&\mathrm{\mathrm{i}\mathrm{\hbar}\dot{\Psi}+\Psi\,\left(\frac{\partial}{\partial t}\mathrm{\int_0^\mathbf{x} \mathbf{S}_A \, \mathrm{dx'}}\right)}\nonumber \\
+&=&\mathrm{-\hbar^2(\nabla^2\Psi)+2i\hbar(\mathbf{\nabla}\Psi)\mathbf{S}_A+\Psi {S_A}^2+i\hbar\Psi(\mathbf{\nabla}\mathbf{S}_A)} \nonumber \\
+&&\mathrm{-2i\hbar(\mathbf{\nabla}\Psi)\mathbf{S}_A-i\hbar\Psi(\mathbf{\nabla}\mathbf{S}_A)-2\Psi{\mathbf{S}_A}^2} \nonumber \\
+&&\mathrm{-2i\hbar(\mathbf{\nabla}\Psi)(\mathbf{d}\times\mathbf{B})-i\hbar\Psi(\mathbf{\nabla}(\mathbf{d}\times\mathbf{B}))-2\Psi\mathbf{S}_A(\mathbf{d}\times\mathbf{B}) }\nonumber \\
+&&\mathrm{+\Psi\left({\mathbf{S}_A}^2+(\mathbf{d}\times\mathbf{B})^2+2\mathbf{S}_A(\mathbf{d}\times\mathbf{B})\right)}\nonumber \\
+&&\mathrm{-\Psi\int\frac{1}{2}\left(\mathbf{D\cdot E +H\cdot B}\right)\,dV}
+\label{schrodingera2}
+\end{eqnarray}
+Here we have omitted writing out the phase factor 
+\begin{equation}
+\mathrm{\exp{\left[-\frac{\mathrm{i}}{\mathrm{\hbar}}\int_0^\mathbf{x}\mathbf{S}_A\,\mathrm{dx'}\right]}}
+\label{phasefactor}
+\end{equation}
+as it appears multiplying every term and will be factored out.  Canceling terms leaves us with
+\begin{eqnarray}
+&&\mathrm{\mathrm{i}\mathrm{\hbar}\dot{\Psi}+\Psi\,\left(\frac{\partial}{\partial t}\mathrm{\int_0^\mathbf{x} \mathbf{S}_A \, \mathrm{dx'}}\right)}\nonumber \\
+&=&\mathrm{-\hbar^2(\nabla^2\Psi) -2i\hbar(\mathbf{\nabla}\Psi)(\mathbf{d}\times\mathbf{B})-i\hbar\Psi(\mathbf{\nabla}(\mathbf{d}\times\mathbf{B}))}\nonumber \\
+&&\mathrm{+\Psi(\mathbf{d}\times\mathbf{B})^2-\Psi\int\frac{1}{2}\left(\mathbf{D\cdot E +H\cdot B}\right)\,dV}
+\label{schrodingera3}
+\end{eqnarray}
+Factoring terms, this can be rearranged into
+\begin{equation}
+\mathrm{i\mathrm{\hbar}\dot{\Psi}=\mathrm{\left(\frac{\left(\mathbf{P}+\mathbf{d}\times\mathbf{B}\right)^2}{2M}-\int\frac{1}{2}\left(\mathbf{D\cdot E}+\mathbf{H\cdot B}\right)\,dV-\frac{\partial}{\partial t}\int_0^\mathbf{x} \mathbf{S}_A\,\mathrm{dx'}\right)\Psi}}
+\label{schrodingera4}
+\end{equation}
+
+
+
+%==============================
+\newpage
+\section{Appendix: The G\"{o}ppert-Mayer Transformation }
+\label{App_1-2} 
+
+
+We begin with the minimal coupling Hamiltonian for a system of charges interacting with an electromagnetic field
+\begin{equation}
+\mathrm{H(t)=\sum_{j}\frac{1}{2m_j}\left[\mathbf{p}_j-q_j \,\mathbf{A}(\mathbf{0},t)\right]^2+V_{c}(\mathbf{x})}
+\label{appendixminimalhamiltonian}
+\end{equation}
+where $\mathbf{A}(\mathbf{x},t)$ is the vector potential, $e_j$ is the charge, and $V_{\mathrm{c}}(\mathbf{x})$ is the scalar potential energy of the system.  In the long-wavelength approximation, we have assumed the spatial variation of $\mathbf{A}(\mathbf{x},t)$ is negligible.  We therefore choose the location of the system of charges considered to be at $\mathbf{x}=0$ and set $\mathbf{A}(\mathbf{x},t)=\mathbf{A}(\mathbf{0},t)$.  The corresponding Schr\"{o}dinger equation for the minimal coupling Hamiltonian is given by
+\begin{equation}
+\mathrm{i\hbar \dot{\psi}(\mathbf{x},t)=\left[\sum_{j}\frac{1}{2m_j}\left[\mathbf{p}_j-q_j\, \mathbf{A}(\mathbf{0},t)\right]^2+V_{c}(\mathbf{x})\right]\psi(\mathbf{x},t)}
+\label{minimalschrodinger}
+\end{equation}
+The unitary transformation responsible for giving rise to the electric dipole interaction (direct coupling representation) is given by the G\"{o}ppert-Mayer transformation (GMT)
+\begin{equation}
+\mathrm{\Theta (t)=\mathrm{\exp{\left[\frac{\mathrm{i}}{\mathrm{\hbar}}\sum_jq_j\,\mathbf{r}_j\cdot \mathbf{A}(\mathbf{0},t) \right]}=\exp{\left[\frac{\mathrm{i}}{\mathrm{\hbar}}\mathbf{d}\cdot \mathbf{A}(\mathbf{0},t) \right]}}}
+\label{gmtransformation}
+\end{equation}
+where
+\begin{equation}
+\mathbf{d}=\sum_{j} e_j \,\mathbf{r}_j
+\end{equation}
+ We rewrite the wave function $\psi$ as
+\begin{equation}
+\mathrm{\psi(\mathbf{x},t)=\Theta(t)\Psi(\mathbf{x},t)=\exp{\left[\frac{\mathrm{i}}{\mathrm{\hbar}}\mathbf{d}\cdot \mathbf{A}(\mathbf{0},t) \right]}\Psi(\mathbf{x},t)}
+\end{equation} 
+Substituting this into Eq.\ (\ref{minimalschrodinger}) yields
+This yields
+\begin{eqnarray}
+&&\mathrm{\mathrm{i}\mathrm{\hbar}\dot{\Psi}(\mathbf{x},t)\Theta(t)+\Psi(\mathbf{x},t)\Theta(t)\,\left(\mathbf{d}\cdot\mathbf{E}(\mathbf{0},t)\right)=}\nonumber \\
+&&\mathrm{-\Psi(\mathbf{x},t)\Theta(t)\left(i\sum_j\frac{e_j}{2m_jc}\mathbf{A}(\mathbf{0},t)\right)^2}\nonumber \\
+&-&\mathrm{\nabla\Psi(\mathbf{x},t)\Theta(t)\left(2i\hbar\sum_j\frac{e_j}{2m_j}\mathbf{A}(\mathbf{0},t)\right)}\nonumber \\
+&-&\mathrm{\hbar^2\nabla^2\Psi(\mathbf{x},t)\Theta(t)+2\Psi(\mathbf{x},t)\Theta(t)\left(i\sum_j\frac{e_j}{2m_j}\mathbf{A}(\mathbf{0},t)\right)^2}\nonumber \\
+&+&\mathrm{\nabla\Psi(\mathbf{x},t)\Theta(t)\left(2i\hbar\sum_j\frac{e_j}{2m_j}\mathbf{A}(\mathbf{0},t)\right)}\nonumber \\
+&+&\mathrm{\Psi(\mathbf{x},t)\Theta(t)\left(i\sum_j\frac{e_j}{2m_j}\mathbf{A}(\mathbf{0},t)\right)^2 +\Psi(\mathbf{x},t)\Theta(t)\mathbf{V}_c(\mathbf{x})}\nonumber \\
+\end{eqnarray}
+Where we have used 
+\begin{equation}
+\mathrm{\mathbf{E}(\mathbf{0},t)=-\frac{\partial \mathbf{A}(\mathbf{0},t)}{\partial t}}
+\label{constitutive1}
+\end{equation}
+Canceling terms and rearranging leaves us with
+\begin{eqnarray}
+\mathrm{i\hbar\dot{\Psi}(\mathbf{x},t)=\left[\frac{\mathbf{P}^2}{2M}-\mathbf{d}\cdot\mathbf{E}(\mathbf{0},t)+\mathbf{V}_c(\mathbf{x})\right]\Psi(\mathbf{x},t)}
+\label{directschrodinger}
+\end{eqnarray}
+Where $\mathbf{P}=\sum_j\mathbf{p}_j$ and $M=\sum_j m_j$
+Here we have arrived at the direct coupling representation of the Hamiltonian. This Hamiltonian however, does not include the radiation energy of the fields themselves. Our treatment of the minimal coupling Hamiltonian Eq.\ (\ref{minimalschrodinger}) may be extended further by including the radiation energy of the fields themselves
+\begin{equation}
+\mathrm{H_R=\frac{1}{2}\int\left( \epsilon_0\mathbf{E}^2(\mathbf{x},t)+\frac{\mathbf{B}^2(\mathbf{x},t)}{\mu_0}\right)\,dV=\sum_j\hbar\omega_j\left({a_j}^{\dagger}\, a_j+\frac{1}{2}\right)}
+\end{equation}
+The question then arises, how does the radiation Hamiltonian transform under the G\"{o}ppert-Mayer unitary transformation transformation? Clearly if the fields are treated classically, the GMT Eq.\ (\ref{gmtransformation}) will commute with the electric field.  If however, we consider a quantized field, this is no longer true. In order to determine how the fields transform under a quantized field, we must promote the vector potential to an operator \cite{thirunamachandran}
+\begin{equation}
+\mathrm{\mathbf{A}(\mathbf{x},t)=\sum_j\mathcal{A}_{\omega_j}\left[a_j\,\mathbf{\varepsilon}_j e^{i(\mathbf{k}_j\cdot\mathbf{x}-\omega t)}+{a_j}^{\dagger}\,\mathbf{\varepsilon}_j e^{-i(\mathbf{k}_j\cdot\mathbf{x}-\omega t)}\right]}
+\end{equation}
+where $\varepsilon$ is the polarization, and
+\begin{equation}
+\mathrm{\mathcal{A}_{\omega_j}=\left[\frac{\hbar}{2\epsilon_0 L^3\omega_j}\right]^{\frac{1}{2}}}
+\end{equation} 
+The transverse electric field in the Coulomb gauge is given by
+\begin{equation}
+\mathrm{\mathbf{E}_{\perp}(\mathbf{x},t)=i\sum_{j,\mu}\mathcal{E}_{\omega_j}\left[a_j\,\mathbf{\varepsilon}_j e^{i(\mathbf{k}_j\cdot\mathbf{x}-\omega t)}-{a_j}^{\dagger}\,\mathbf{\varepsilon}_j e^{-i(\mathbf{k}_j\cdot\mathbf{x}-\omega t)}\right]}
+\end{equation}
+where
+\begin{equation}
+\mathrm{\mathcal{E}_{\omega_j}=\left[\frac{\hbar\omega_j}{2\epsilon_0 L^3}\right]^{\frac{1}{2}}}
+\end{equation} 
+From here it is necessary to determine the commutation relation between the vector potential and electric field.
+\begin{eqnarray}
+&&\mathrm{[\mathbf{A}(\mathbf{x},t),\mathbf{E}_{\perp}(\mathbf{x}',t)]=} \nonumber \\
+&&\mathrm{\frac{i\hbar}{2\epsilon_0 L^3}\sum_{j_{\perp},j'_{\perp}}\left(\left[a^{\dagger}_{j},a_{j'}\right]\,e^{i\mathbf{k}_{j'}\cdot\mathbf{x'}}e^{-i\mathbf{k}_{j}\cdot\mathbf{x}}\right)+} \nonumber \\
+&&\mathrm{\frac{i\hbar}{2\epsilon_0 L^3}\sum_{j_{\perp},j'_{\perp}}\left(\left[a^{\dagger}_{j'},a_{j}\right]\,e^{i\mathbf{k}_{j}\cdot\mathbf{x}}e^{-i\mathbf{k}_{j'}\cdot\mathbf{x'}}\right)=} \nonumber \\
+&&\mathrm{\frac{i\hbar}{2\epsilon_0 L^3}\sum_{j_{\perp}}\left(e^{i\mathbf{k}_j\cdot(\mathbf{x}-\mathbf{x}')}+e^{-i\mathbf{k}_j\cdot(\mathbf{x}-\mathbf{x}')}\right)} \nonumber \\
+\end{eqnarray}
+Where we have made use of the relation $[a_j,a^{\dagger}_{j'}]=\delta_{j,j'}$.  In the summation, the notation $j_{\perp}$ indicates that we are taking the sum over the transverse modes. We convert our sum into an integral through \cite{loudonbook}
+\begin{equation}
+\mathrm{\sum_{k}\rightarrow \frac{L^3}{(2\pi)^3}\int\,d^3k}
+\end{equation}
+and we make use of the transverse delta function
+\begin{equation}
+\mathrm{\delta_{\perp}(\mathbf{x}-\mathbf{x}')=\frac{1}{(2\pi)^3}\int\,d^3k_{\perp}\,e^{i\mathbf{k}_j\cdot(\mathbf{x}-\mathbf{x}')}}
+\end{equation}
+Therefore we find 
+\begin{equation}
+\mathrm{[\mathbf{A}(\mathbf{x,t}),\mathbf{E}_{\perp}(\mathbf{x}',t)]=-\frac{i\hbar}{\epsilon_0}\delta_{\perp}(\mathbf{x}-\mathbf{x}')}
+\label{comm1}
+\end{equation}
+In order to determine how the electric field transforms under the GMT $\Theta(t)$ we use the property that for any two operators $\mathbf{A}$ and $\mathbf{B}$
+\begin{equation}
+\exp{(i\mathbf{A})}\,\mathbf{B}\exp{(-i\mathbf{A})}=\mathbf{B}+i[\mathbf{A},\mathbf{B}]+...
+\label{comm2}
+\end{equation}
+Using Eq.\ (\ref{comm1}) and Eq.\ (\ref{comm2}) we find
+\begin{equation}
+\mathrm{\Theta(t)\mathbf{E}_{\perp}(\mathbf{x},t)\Theta^{\dagger}(t)=\mathbf{E}_{\perp}(\mathbf{x},t)+\frac{1}{\epsilon_0}\mathbf{d}_{\perp}(\mathbf{x},t)=\frac{\mathbf{D}(\mathbf{x},t)}{\epsilon_0}}
+\end{equation}
+Where $\mathbf{D}$ is the displacement field.  Note that for a neutral system $\nabla\cdot\mathbf{D}=0$ and therefore the displacement field is fully transverse which allows us to drop the perpendicular suffix.
+It can easily be checked that 
+\begin{eqnarray}
+&&\mathrm{\Theta(t)\mathbf{B}(\mathbf{x},t)\Theta^{\dagger}(t)=\mathbf{B}(\mathbf{x},t)} \\
+&&\mathrm{\Theta(t)\mathbf{A}(\mathbf{x},t)\Theta^{\dagger}(t)=\mathbf{A}(\mathbf{x},t)} \\
+&&\mathrm{\Theta(t)\mathbf{P}(\mathbf{x},t)\Theta^{\dagger}(t)=\mathbf{P}(\mathbf{x},t)}
+\end{eqnarray}
+This allows us to deduce that 
+\begin{equation}
+\mathrm{\Theta(t)\mathbf{D}(\mathbf{x},t)\Theta^{\dagger}(t)=\epsilon_0\mathbf{E}(\mathbf{x},t)} 
+\end{equation}
+We can now preform a generalized G\"{o}ppert-Mayer transformation for the total minimal coupling Hamiltonian
+\begin{eqnarray}
+&&\mathrm{H_{Min}=H_0+H_R}\nonumber \\
+&&=\mathrm{\sum_{j}\frac{1}{2m_j}\left[\mathbf{p}_j-q_j \,\mathbf{A}(\mathbf{0},t)\right]^2+V_{c}(\mathbf{x})}\nonumber \\
+&&\mathrm{+\frac{1}{2}\int\left( \epsilon_0\mathbf{E}^2(\mathbf{x},t)+\frac{\mathbf{B}^2(\mathbf{x},t)}{\mu_0}\right)\,dV}
+\label{fullminimal}
+\end{eqnarray}
+We begin with the Schr\"{o}dinger equation
+\begin{equation}
+i\hbar\frac{\partial}{\partial t}\psi=H\,\psi
+\end{equation}
+and rewrite the wave function as
+\begin{equation}
+\mathrm{\psi=e^{\frac{i}{\hbar}\mathbf{d}\cdot\mathbf{A}}\Phi}
+\end{equation}
+This allows us to express the Schr\"{o}dinger equation in terms of the wave function $\Phi$ 
+\begin{eqnarray}
+&&\mathrm{i\hbar\frac{\partial}{\partial t}\Phi=i\hbar\frac{\partial}{\partial t}\left(e^{\frac{i}{\hbar}\mathbf{d}\cdot\mathbf{A}}\psi\right)}\nonumber \\
+&=&\mathrm{i\hbar e^{\frac{i}{\hbar}\mathbf{d}\cdot\mathbf{A}}\frac{\partial}{\partial t}\psi-e^{\frac{i}{\hbar}\mathbf{d}\cdot\mathbf{A}}\left(\dot{\mathbf{d}}\cdot\mathbf{A}+\mathbf{d}\cdot\dot{\mathbf{A}}\right)\psi} \nonumber \\
+&=&\mathrm{e^{\frac{i}{\hbar}\mathbf{d}\cdot\mathbf{A}}\,H\,\psi-e^{\frac{i}{\hbar}\mathbf{d}\cdot\mathbf{A}}\left(\dot{\mathbf{d}}\cdot\mathbf{A}+\mathbf{d}\cdot\mathbf{E}\right)\psi} \nonumber \\
+&=&\mathrm{e^{\frac{i}{\hbar}\mathbf{d}\cdot\mathbf{A}}\,H\,e^{-\frac{i}{\hbar}\mathbf{d}\cdot\mathbf{A}}\Phi-e^{\frac{i}{\hbar}\mathbf{d}\cdot\mathbf{A}}\left(\dot{\mathbf{d}}\cdot\mathbf{A}+\mathbf{d}\cdot\mathbf{E}\right)e^{-\frac{i}{\hbar}\mathbf{d}\cdot\mathbf{A}}\Phi} \nonumber \\
+\end{eqnarray}
+The Hamiltonian $\mathrm{H_{Min}}$ transforms under the generalized GMT in the same way that that it did when the fields were considered classical, with the exception that $\mathbf{E}\rightarrow\mathbf{D}/\epsilon_0$.  Therefore under the generalized GMT, the minimal coupling Hamiltonian Eq.\ (\ref{fullminimal}) is transformed into the direct coupling Hamiltonian
+\begin{eqnarray}
+&&\mathrm{H_{DC}=\frac{\mathbf{P}^2}{2M}-\mathbf{d}\cdot\mathbf{D}(\mathbf{0},t)}\nonumber \\
+&&\mathrm{+\frac{1}{2}\int\left( \frac{\mathbf{D}^2}{\epsilon_0}(\mathbf{x},t)+\frac{\mathbf{B}^2(\mathbf{x},t)}{\mu_0}\right)\,dV} \nonumber \\
+&&\mathrm{+\mathbf{V}_c(\mathbf{x})+\dot{\mathbf{d}}\cdot\mathbf{A}}
+\end{eqnarray}
+
+%==============================
+\newpage
+\section{Appendix: Gauge Transformation - Direct Coupling}
+\label{App_1-3} 
+
+
+In this section, we outline the derivation of the direct coupling Hamiltonian through the use of the G\"{o}ppert-Mayer gauge.  We begin with the minimal coupling Lagrangian
+\begin{eqnarray}
+\mathrm{L_{min}}&=&\mathrm{\frac{1}{2}\sum_n m_n\dot{\mathbf{r}}_n-V_c+\sum_n\left[q_n\dot{\mathbf{r}}_n\mathbf{A}(\mathbf{r}_n,t)-q_nU(\mathbf{r}_n,t)\right]} \nonumber \\
+&+&\mathrm{\frac{\epsilon_0}{2}\int\left[\dot{\mathbf{A}}^2(\mathbf{r},t)-c^2\left(\nabla\times\mathbf{A}(\mathbf{r},t)\right)^2\right]d^3\mathbf{r}}
+\label{minimallagrangian1}
+\end{eqnarray}
+Where $\mathbf{A}$ and $U$ are the vector and scalar potential for the external fields, and $V_{\mathrm{c}}$ is the Coulomb potential.
+The corresponding Hamiltonian is given by
+\begin{eqnarray}
+\mathrm{H_{min}}&=&\mathrm{\sum_n \frac{1}{2m_n}\left[\mathbf{p}_n-q_n\mathbf{A}(\mathbf{r_n},t)\right]^2+V_{c}+\sum_nq_nU(\mathbf{r}_n,t)}\nonumber \\
+&+&\mathrm{\frac{\epsilon_0}{2}\int\left[\dot{\mathbf{A}}^2(\mathbf{r},t)-c^2\left(\nabla\times\mathbf{A}(\mathbf{r},t)\right)^2\right]d^3\mathbf{r}}
+\label{minimalhamiltonian1}
+\end{eqnarray}
+Here the conjugate momentum and conjugate field are given by
+\begin{eqnarray}
+&&\mathrm{\mathbf{p}_n=m_n\dot{\mathbf{r}}_n+q_n\mathbf{A}(\mathbf{r}_n,t)} \\
+&&\mathrm{\mathbf{\Pi}(\mathbf{r},t)=\epsilon_0 \dot{\mathbf{A}}(\mathbf{r},t)=-\epsilon_0\mathbf{E}(\mathbf{r},t)}\\
+\end{eqnarray}
+Let us now preform the following gauge transformation
+\begin{eqnarray}
+&&\mathrm{\mathbf{A}'(\mathbf{r_n},t)=\mathbf{A}(\mathbf{r_n},t+\nabla\chi(\mathbf{r}_n,t)}  \\
+&&\mathrm{U'(\mathbf{r_n},t)=U(\mathbf{r_n},t)+\frac{\partial}{\partial t}\chi(\mathbf{r}_n,t)}
+\end{eqnarray}
+Substituting this into the minimal coupling Lagrangian Eq.\ (\ref{minimallagrangian1}), the transformed Lagrangian becomes
+\begin{eqnarray}
+\mathrm{L_{dir}}&=&\mathrm{\frac{1}{2}\sum_n m_n\dot{\mathbf{r}}_n-V_c+\sum_n\left[q_n\dot{\mathbf{r}}_n\mathbf{A}'(\mathbf{r}_n,t)-q_nU'(\mathbf{r}_n,t)\right]} \nonumber \\
+&+&\mathrm{\frac{\epsilon_0}{2}\int\left[\dot{\mathbf{A}}^2(\mathbf{r},t)-c^2\left(\nabla\times\mathbf{A}(\mathbf{r},t)\right)^2\right]d^3\mathbf{r}} \nonumber \\
+&=&\mathrm{L_{min}+\frac{d}{dt}\left[\sum_n q_n\,\chi(\mathbf{r}_n,t)\right]}
+\label{minimallagrangian2}
+\end{eqnarray}
+This shows that the gauge transformation generated by $\chi$ is equivalent to adding 
+\begin{equation}
+\mathrm{\frac{d}{dt}\left[\sum_n q_n\,\chi(\mathbf{r}_n,t)\right]}
+\end{equation}
+to the Lagrangian.  The direct coupling Lagrangian is obtained through the G\"{o}ppert-Mayer generator
+\begin{equation}
+\mathrm{\chi(\mathbf{r},t)=-\int \mathbf{P}^{\perp}(\mathbf{r},t)\cdot\mathbf{A}(\mathbf{r},t)\,d^3\mathbf{r}}
+\end{equation}
+Where $\mathbf{P}(\mathbf{r})=\sum_n q_n\left(r-R_n\right)\delta(\mathbf{r}-\mathbf{R}_n)$ is the electric polarization vector field.  The transformed conjugate momentum and conjugate field become
+\begin{eqnarray}
+&&\mathrm{\mathbf{p}_n=m_n\dot{\mathbf{r}}} \\
+&&\mathrm{\mathbf{\Pi}(\mathbf{r},t)=\epsilon_0 \dot{\mathbf{A}}(\mathbf{r},t)-\mathbf{P}^{\perp}(\mathbf{r},t)=-\mathbf{D}(\mathbf{r},t)}
+\end{eqnarray}
+Where $\mathbf{D}$ is the displacement field.  Note that for a neutral system $\nabla\cdot\mathbf{D}=0$ and therefore the displacement field is fully transverse which allows us to drop the perpendicular suffix. From here we can construct the transformed Hamiltonian 
+\begin{eqnarray}
+\mathrm{H_{dir}}&=&\mathrm{\sum_n\mathbf{p}_n\cdot\dot{\mathbf{r}}_n+\int\Pi(\mathbf{r},t)\cdot\dot{\mathbf{A}}(\mathbf{x},t)\,d^3\mathbf{r}\,-L_{dir}} \nonumber \\
+&=&\mathrm{\sum_n \frac{1}{2m_n}\mathbf{p}^2_n+V_{c}-\frac{1}{\epsilon_0}\int \mathbf{P}^{\perp}(\mathbf{r},t)\cdot\mathbf{D}(\mathbf{r},t)\,d^3\mathbf{r}}\nonumber \\
+&+&\mathrm{\frac{\epsilon_0}{2}\int\left[\mathbf{D}^2(\mathbf{r},t)-c^2\left(\nabla\times\mathbf{A}(\mathbf{r},t)\right)^2\right]d^3\mathbf{r}}
+\label{minimalhamiltonian1}
+\end{eqnarray} 
+This is the direct coupling Hamiltonian. 
+%================================================================ 

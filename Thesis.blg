@@ -1,0 +1,67 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: Thesis.aux
+Case mismatch error between cite keys Leonhardt2 and leonhardt2
+---line 103 of file Thesis.aux
+ : \citation{Leonhardt2
+ :                     }
+I'm skipping whatever remains of this command
+Case mismatch error between cite keys Hinds and hinds
+---line 302 of file Thesis.aux
+ : \citation{Hinds
+ :                }
+I'm skipping whatever remains of this command
+Case mismatch error between cite keys Hinds and hinds
+---line 303 of file Thesis.aux
+ : \citation{Hinds
+ :                }
+I'm skipping whatever remains of this command
+The style file: apsrev4-1.bst
+Database file #1: Thesis.bib
+I was expecting a `,' or a `}'---line 167 of file Thesis.bib
+ : 
+ : @article{cimmino89,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 573 of file Thesis.bib
+ : 
+ : howpublished = {Available at \url{http://steck.us/alkalidata/rubidium87numbers.pdf}}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field part---line 752 of file Thesis.bib
+ :    eid = 
+ :          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 891 of file Thesis.bib
+ : @article{Phillips
+ :                  ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "lembessis"
+Warning--I didn't find a database entry for "vaidmann"
+Warning--I didn't find a database entry for "hinds"
+Warning--I didn't find a database entry for "thirunamachandran"
+Warning--I didn't find a database entry for "boyd"
+Warning--I didn't find a database entry for "cohentannoudji"
+Warning--I didn't find a database entry for "loudonbook"
+Name 1 in "R.D. Van Zee, and J.P. Looney" has a comma at the end for entry spectroscopy
+while executing---line 3239 of file apsrev4-1.bst
+merlin.mbs apsrev4-1.bst 2010-07-25 4.21a (PWD, AO, DPC) hacked
+Control: key (0) 
+Control: author (72) initials jnrlst
+Control: editor formatted (1) identically to author
+Control: production of article title (-1) disabled
+Control: page (0) single
+Control: year (1) truncated
+Control: production of eprint (0) enabled
+Name 1 in "R.D. Van Zee, and J.P. Looney" has a comma at the end for entry spectroscopy
+while executing---line 3445 of file apsrev4-1.bst
+Name 1 in "R.D. Van Zee, and J.P. Looney" has a comma at the end for entry spectroscopy
+while executing---line 3445 of file apsrev4-1.bst
+Name 1 in "R.D. Van Zee, and J.P. Looney" has a comma at the end for entry spectroscopy
+while executing---line 3445 of file apsrev4-1.bst
+Name 1 in "R.D. Van Zee, and J.P. Looney" has a comma at the end for entry spectroscopy
+while executing---line 3445 of file apsrev4-1.bst
+Warning--empty title in peshkin89
+Warning--missing publisher in peshkin89
+Warning--empty year in peshkin89
+Warning--empty year in zeiske95
+Warning--missing institution in steck
+(There were 12 error messages)

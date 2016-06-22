@@ -1,0 +1,58 @@
+%================================================================
+\chapter{Conclusions and Outlook}
+\chaptermark{Conclusions and Outlook}
+%================================================================
+
+
+In this final chapter,...
+
+
+%================================
+\section{Summary}
+
+We started with the premise that condensed matter systems fall into universality classes that are uniquely labelled by the common phase of systems within each class. We argued that, while any system in a universality class serves as a representative for that universality class, universality classes are best typified by fixed-point theories, which are theories that possess no non-universal properties and are scale invariant. We illustrated how these ideas materialize as effective field theory and RG statements about the low-energy effective field theories of condensed matter systems. We learned that fixed-point theories are indeed privileged as they are invariant under the action of RG, and all systems within the same universality class ultimately flow to the fixed-point theory that characterizes that universality class. Thus, the question of the fate of a given system becomes synonymous to the question of to what fixed point the low-energy effective field theory of the system flows under RG.
+
+
+While the notion of RG is very elegant and powerful, implementing it in practice may not be easy. Nonetheless, as we saw, under the assumptions of locality and perturbativity it becomes possible to systematically carry out the RG transformation approximately in the vicinity of a fixed point. Such RG approaches are referred to as local perturbative RG schemes, which we utilized in the presented RG analyses in this thesis. As briefly explained in Chapter 1, perturbativity allows us to systematically integrate out high-energy modes within a loop-expansion approximation, and locality, together with perturbativity, enables us to consistently restrict the RG analysis to a manageable set of coupling constants.
+
+
+Before further discussing practical challenges of implementing RG, let us point out a more basic problem in studying some lattice models that we encountered an instance of in Chapter 2: sensitivity to the precise values of the coupling constants in the continuum field theory of a lattice model. Sometimes the RG analysis of the quantum field theory of a lattice model can be carried out without much difficulty and what prevents us from accurately determining the fate of the system is the lack of the precise values of the couplings in the continuum field theory, \textit{i.e.}, the initial values of the running couplings. A simple and well-known example of this is the so-called spin-$\frac{1}{2}$ $J_1-J_2$ model in one dimension, which is an isotropic Heisenberg antiferromagnetic spin-$\frac{1}{2}$ chain with nearest and next-nearest-neighbor exchanges $J_1$ and $J_2$. This model undergoes a phase transition to a gapped state at $J^{\text{\tiny crit}}_2=0.241167\, J_1$, and, in the continuum limit, just like a nearest-neighbor isotropic Heisenberg antiferromagnetic chain, is described by the $SU(2)_{k=1}$ WZNW theory perturbed by a backscattering term. The sign of the coupling constant of the backscattering term changes at the critical point $J^{\text{\tiny crit}}_2$, which brings about the transition. Precise determination of this critical next nearest exchange, $J^{\text{\tiny crit}}_2$, has only been possible by numerical calculations~\cite{Eggert1996,Haldane1982}. Nevertheless, as we saw in Chapter 2, being able to identify main instabilities based on the general flow of the coupling constants in an RG analysis is extremely valuable.
+
+
+The analysis of the flow of coupling constants in local perturbative RG schemes is typically restricted to the vicinity of the fixed point with respect to which the calculations are carried out (the UV fixed point). As a result of this, often we are unable to track the flow of the low-energy effective field theory of the system all the way to its fixed point (the IR fixed point) in these RG schemes. One possible solution to circumvent this shortcoming of local perturbative RG schemes is to introduce another control parameter (\textit{e.g.} increasing a flavour number, or extending the dimensions of the system) that allows for making a systematic approximation. A well-known example of this is the flow from the Gaussian fixed point to the Wilson-Fisher fixed point in a $\phi^4$ scalar field theory in $(4-\epsilon)$-dimensions. There, extending the physical dimensions from $\epsilon=1$ (or even $\epsilon=2$) to $\epsilon \ll 1$, allows for systematically accessing the Wilson-Fisher fixed point~\cite{Wilson1972,Fisher1998,KleinertSchulte2001,Zinn-Justin2013}. Other recent examples of such approaches are the RG studies in Refs.~\cite{Senthil2009,Dalidovich2013,Sur2014}. 
+
+
+In general it may not be possible to harness the RG flow, away from the UV fixed point, by increasing the flavour index, or it may not be easy to define the theory in non-integer dimensions. An instance of the former is the insufficiency of the large-N approximation in the case of a $U(1)$ gauge field coupled to a single patch of a Fermi surface in two dimensions that was pointed out in Ref.~\cite{Lee2009}. In cases where the UV fixed point is a $(1+1)$D CFT, such as the RG analysis in Chapter 2, extending to non-integer dimensions is not yet fully understood~\cite{ElShowk2014}.
+
+
+The above discussion of the flow of the low-energy effective field theory of a system from the vicinity of its UV fixed point to its IR fixed point allows us to better understand the rationale behind the RG analysis of Chapter 2. Specifically, the meaning of the length scale $L^*$ where an interchain coupling reaches $\mathcal{O}(1)$ and quasi-one-dimensionality is lost. This will also explain why in both the RG analysis and the numerical calculations three chains were enough while the system is two-dimensional. The length scale $L^*$ marks a dimensional crossover. At length scales smaller than $L^*$ the model is controlled by the one-dimensional fixed point of decoupled spin-$\frac{1}{2}$ chains. On the other hand, at length scales larger than $L^*$ the system is controlled by its true two-dimensional fixed point. 
+
+
+In Chapter 3, we encountered two other obstacles in implementing RG for fermion systems that possess Fermi surfaces. The first problem was related to applying RG to fermion systems with Fermi surfaces in general. The second problem was the breakdown of locality, which was more specific to that model and Fermi surfaces that undergo symmetry-breaking phase transitions.
+
+
+We argued that in applying RG to Fermi surfaces, one has two options: either renormalizing towards a point on the Fermi surface or renormalizing towards the entire Fermi surface. The former is the underlying idea in the so-called patch approximation, and the latter is the central idea in Shankar's RG. Patch approximations have their own limitations~\cite{Lee2009,Polchinski1994}. On the other hand, RG schemes based on renormalizing towards the Fermi surface entail non-linear scaling relations~\cite{Shankar1994,Metzner1998,Kopietz2001}. Thus, despite great progresses, the application of RG approaches to Fermi surfaces even after twenty years since Shankar's and Polchinski's works still remains incomplete. 
+
+
+The loss of locality in the RG analysis of Chapter 3 at the critical point was attributed to the emergence of a gapless mode at the critical point. It was argued that, similar to more conventional symmetry-breaking phase transitions, locality can be retained if one isolates the putative emergent gapless mode. Nonetheless, this indicated that loss of locality poses a serious problem to systematic implementation of RG in practice.
+
+
+
+
+%================================
+\section{Future Directions}
+
+
+Being able to treat strongly interacting systems is of great importance. Here we briefly mention three possible approaches that are based on or are related to RG and may allows us to address a wider range of problems.
+
+
+As briefly mentioned in Chapter 1, exact, or more precisely, functional RG approaches can serve as better alternatives in cases where local perturbative RG approaches are problematic. In particular, in cases where the low-energy effective theory is non-local but still perturbative functional RG schemes can be useful.
+
+
+While tracing RG flows from UV fixed points to IR fixed points in general may seem too far-fetched, one can attempt addressing a more modest question: whether there are general restrictions (no-go theorems) on the RG flows between various fixed points. A perfect instance of such ``no-go'' theorems for the RG flows between fixed points already exists in one dimension: Zamolodchikov's celebrated $c$-theorem\index{$c$-theorem}. In one dimension, a fixed point with dynamical critical exponent $z=1$ is scale invariant and must be a CFT~\cite{Polchinski1988}. A Conformal field theory is characterized by its central charge, $c$, which is a measure of the total number of degrees of freedom in the system~\cite{DiFrancesco1997,FrishmanSonnenschein2010}. Zamolodchikov~\cite{Zamolodchikov1986} showed that it is not possible to flow from a CFT with a smaller central charge to another one with a larger central charge. There has been attempts to extend this theorem to higher dimensions, most notable Cardy's $a$-theorem\index{$a$-theorem} in four-dimensions~\cite{Cardy1988,Komargodski2011}. Also, there has been proposals to use \textit{entanglement entropy}\index{Entanglement Entropy} to impose constraints on RG flows between various fixed points~\cite{Casini2011,Casini2012,Grover2014}. 
+
+
+Another recent promising direction in dealing with strongly interacting quantum field theories is the use of \textit{holography}\index{Holography}~\cite{Lee2013,Lee2010a,Lee2010b}.
+
+
+%================================================================

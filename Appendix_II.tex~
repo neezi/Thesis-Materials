@@ -1,0 +1,1992 @@
+%================================================================
+\chapter{Appendix to Chapter 3}
+%\chapter[toc version]{doc version}
+\chaptermark{Appendix to Chapter 3}
+
+
+In this appendix the computational details of $\Gamma_{\text{\tiny PH}}(q\hat{x},\Omega=0)$ and $\Gamma_{\text{\tiny PP}}(\mathbf{q}=0,\Omega\ll\Lambda)$ for the model in Chapter 3 are presented. From these, the one-loop quantum corrections $\partial_{\log\Lambda}\Gamma_{\text{\tiny PH}}(q\hat{x},0)$ and $\partial_{\log\Lambda}\Gamma_{\text{\tiny PP}}(\mathbf{q}=0,\Omega\l\Lambda)$, at ($\mu=0$) and slightly away ($\mu>0$) from the critical point of the neck-narrowing Lifshitz transition are obtained. For $\partial_{\log\Lambda}\Gamma_{\text{\tiny PH}}(q\hat{x},0)$, a series expansion in $q$ is determined from which we obtain the $\beta$-functions presented in Chapter 3. At the end, the computational details of the imaginary part of the one-loop particle-hole susceptibility, $\chi''_{\text{\tiny PH}}(q\hat{x},\Omega)$, are given. 
+
+
+
+%--------------------------------
+\section{Computation of $\Gamma_{\text{\tiny PH}}(q\hat{x},0)$ for $\mu>0$ and the $\beta$-Functions}
+\label{Appendix_II-GammaPH_NZmu}
+
+The one-loop particle-hole diagram $\Gamma_{\text{\tiny PH}}(q\hat{x},\Omega=0)$ for $\mu>0$ is given by:  
+\begin{align}
+	\Gamma_{\text{\tiny PH}}(q\hat{x},\Omega=0)
+	&\,=\,
+	\frac{1}{(2\pi)^2} \int\text{d}\mathbf{k}\,
+	\frac{\theta(\xi_{\mathbf{k}})-\theta(\xi_{\mathbf{k+q}})}{\xi_\mathbf{k}-\xi_\mathbf{k+q}}
+	\,\,e^{-\frac{|\mathbf{k}|^2+|\mathbf{k+q}|^2}{K^2}}
+	\,\,e^{-\frac{\xi_{\mathbf{k}}^2+\xi_{\mathbf{k+q}}^2}{\Lambda^2}}
+	\,.
+	\label{App_II-Gamma_PH-NZmu_0}
+\end{align}
+For the purpose of computing the above integral, it is more convenient to change the integration variables: $(k_x,k_y>0)\to(\xi,\xi')$, where $\xi=\xi_{\mathbf{k}}$ and $\xi'=\xi_{\mathbf{k+q}}$. 
+\begin{equation}
+	\begin{cases}
+		\xi \,=\, k_x^2 - k_y^2 - \mu
+		\\
+		\xi' \,=\, k_x^2 + q^2 + 2qk_x - k_y^2 - \mu
+	\end{cases}
+	\rightarrow
+	\begin{cases}
+		k_x \,=\, \frac{1}{2q}(\xi' - \xi - q^2)
+		\\
+		k_y \,=\, \pm \sqrt{ - \xi - \mu + \frac{1}{4q^2}(\xi' - \xi - q^2)^2 }
+	\end{cases}
+\end{equation}
+The Jacobian of this change of integration variables is:
+\begin{equation}
+	\mathcal{J}\,=\, \Big| \frac{-1}{2\sqrt{ (\xi' - \xi - q^2)^2 - 4q^2 (\xi+\mu) }} \Big|
+\end{equation}
+with the constraint $(\xi' - \xi - q^2)^2 \geq 4q^2 (\xi+\mu)$. The integral in Eq.~[\ref{App_II-Gamma_PH-NZmu_0}] becomes:
+\begin{align}
+	\Gamma_{\text{\tiny PH}}(q\hat{x},0)
+	&\,=\,
+	\frac{1}{(2\pi)^2} 
+	\int_{-\infty}^{\infty}\text{d}\xi\,\int_{-\infty}^{\infty}\text{d}\xi'\,\,
+	\frac{\theta(\xi)-\theta(\xi')}{\xi - \xi'}
+	\frac{
+		e^{-\frac{\xi^2+\xi'^2}{\Lambda^2}}\,
+		e^{-\frac{|\mathbf{k}|^2+|\mathbf{k+q}|^2}{K^2}}
+	}{\sqrt{ (\xi' - \xi - q^2)^2 - 4q^2 (\xi+\mu) }}
+	\,,
+\end{align}
+The above integral is further simplified using the new variables $X=\xi-\xi'$ and $t|X|=\xi+\xi'$:
+\begin{align}
+	\Gamma_{\text{\tiny PH}}(q\hat{x},0)
+	\,=\,&
+	\frac{1}{2(2\pi)^2}
+	\int_{-\infty}^{\infty}\text{d}X\,\int_{-1}^{1}\text{d}t\,\,
+	\frac{|X|}{X}
+	\frac{\theta\big(X(t+1)\big)-\theta\big(X(t-1)\big)}{\sqrt{(-X-q^2)^2-4q^2(\frac{t+1}{2}X+\mu)}}
+	\nonumber \\	
+	&
+	e^{-\frac{1}{K^2}(tX+\frac{X^2}{q^2}-2\mu-q^2)}\,
+	e^{-\frac{X^2(1+t^2)}{2\Lambda^2}}
+	\label{App_II-Equation_4}
+	\,,
+\end{align}
+where the integration domain is restricted to the region where $(X+q^2)^2\geq2q^2(t+1)X+4q^2\mu$. For $q\leq 2\sqrt{\mu}$,  applying the Heaviside functions and imposing the constraint $(X+q^2)^2\geq2q^2(t+1)X+4q^2\mu$, we obtain:
+\begin{align}
+	\Gamma_{\text{\tiny PH}}(q\hat{x},0)
+	\,=\,&
+	\frac{1}{(2\pi)^2}
+	\int_{X_{\text{\tiny min}}}^{\infty}\text{d}X\,\int_{-1}^{1}\text{d}t\,\,
+	\frac{
+		e^{-\frac{1}{K^2}(tX+\frac{X^2}{q^2}-2\mu-q^2)}\,
+		e^{-\frac{X^2(1+t^2)}{2\Lambda^2}}	
+	}{\sqrt{X^2+q^4-4q^2\mu^2 + 2q^2tX}}
+	\label{G_PH_1}
+	\,,
+\end{align}
+where $X_{\text{\tiny min}}=tq^2+q^2\sqrt{4\frac{\mu}{q^2}-(1-t^2)}$. To further simplify the above integral we first need to rewrite the exponential terms as:
+\begin{align}	
+	\exp\Bigg\{&
+		-\frac{1}{K^2}(tX+\frac{X^2}{q^2}\cancel{-2\mu-q^2})
+		-\frac{X^2(1+t^2)}{2\Lambda^2}
+	\Bigg\}
+	\nonumber \\[.5em]
+	\,=\,
+	\exp\Bigg\{&-
+		\frac{ 2 \Lambda^2 + q^2 K^2 (1+t^2) }{ 2 \Lambda^2 q^2 K^2 }
+		\Big( X + \frac{ t q^2 \Lambda^2 }{ q^2 K^2 (1+t^2) + 2\Lambda^2 } \Big)^2
+	\nonumber\\
+	&
+		-
+		\frac{ q^2 t^2 \Lambda^2 }{ 2q^2 K^4 (1+t^2) + 4 K^2 \Lambda^2}
+	\Bigg\}
+	\,,
+\end{align}
+where in the last line we dropped the two unimportant terms $\frac{2\mu}{K^2}$ and $\frac{q^2}{K^2}$. Using $X\to qK\mathcal{Y}+X_{\text{\tiny min}}$, the integral in Eq.~[\ref{G_PH_1}] becomes:
+\begin{align}
+	\Gamma_{\text{\tiny PH}}(q\hat{x},0)
+	\,=\,&
+	\frac{1}{(2\pi)^2}
+	\int_{-1}^{1}\text{d}t\,\,
+	e^{-\frac{ q^2 t^2 \Lambda^2 }{ 2q^2 K^4 (1+t^2) + 4 K^2 \Lambda^2}}
+	\int_{0}^{\infty}\text{d}\mathcal{Y}\,
+	\frac{1}{\sqrt{\mathcal{Y}(\mathcal{Y}+2 a(t))}}
+	\nonumber\\
+	&
+	e^{
+		-\frac{ 2 \Lambda^2 + q^2 K^2 (1+t^2) }{ 2 \Lambda^2 }
+		\big( \mathcal{Y} + \frac{tq}{K} + a(t) + \frac{ t q \Lambda^2 }{ q^2 K^3 (1+t^2) + 2 K \Lambda^2 } \big)^2
+	}
+	\label{G_PH_2}
+	\,,
+\end{align}
+where, $a(t) \,=\, \sqrt{4\frac{\mu}{K^2}-(1-t^2)\frac{q^2}{K^2}}$. Using, $\mathcal{Y}\to\mathcal{Y}+a(t)$, we get:
+\begin{align}
+	\Gamma_{\text{\tiny PH}}(q\hat{x},0)
+	\,=\,&
+	\frac{1}{(2\pi)^2}
+	\int_{-1}^{1}\text{d}t\,
+	e^{-\frac{ q^2 t^2 \Lambda^2 }{ 2q^2 K^4 (1+t^2) + 4 K^2 \Lambda^2}}
+	\int_{a(t)}^{\infty}\text{d}\mathcal{Y}	\,
+	\frac{1}{\sqrt{\mathcal{Y}^2 - a(t)^2}}
+	\nonumber\\
+	&
+	e^{
+		-\frac{ 2 \Lambda^2 + q^2 K^2 (1+t^2) }{ 2 \Lambda^2 }
+		\big( \mathcal{Y} + \frac{tq}{K} + \frac{ t q \Lambda^2 }{ q^2 K^3 (1+t^2) + 2 K \Lambda^2 } \big)^2
+	}
+	\label{G_PH_3}
+	\,.
+\end{align} 
+The above integral can be written as:
+\begin{align}
+	\Gamma_{\text{\tiny PH}}(q\hat{x},0)
+	\,=\,&
+	\frac{1}{(2\pi)^2}
+	\int_{-1}^{1}\text{d}t\,
+	e^{-\frac{ q^2 t^2 }{K^2} \beta(t)}
+	\int_{\frac{a(t)}{\beta(t)}}^{\infty}\,
+	\frac{ \text{d}\mathcal{Y} }{\sqrt{\mathcal{Y}^2 - \frac{a(t)^2}{\beta(t)^2}}}\,\,
+	e^{
+		-\frac{1}{\beta(t)}
+		\big( \mathcal{Y} + \frac{tq}{K \beta(t)} + \frac{ t q }{K}  \big)^2
+	}
+	\label{G_PH_4}
+	\,,
+\end{align} 
+where $\beta(t)=\frac{ \Lambda^2 }{ q^2 K^2 (1+t^2) + 2 \Lambda^2 }$. Note that non-analyticity at $\mathcal{O}(\frac{\Lambda}{K})$ mentioned in Chapter 3 stems from $\beta(t)$. Finally, $\Gamma_{\text{\tiny PH}}(q\hat{x},i\Omega=0)$ can be approximately computed by expanding the inverse square root term in the integrand in large $\mathcal{Y}$:
+\begin{align}
+	\Gamma_{\text{\tiny PH}}(q\hat{x},0)
+	\,=\,
+	&
+	\frac{1}{(2\pi)^2}
+	\int_{-1}^{1}\text{d}t\,
+	e^{-\frac{ q^2 t^2 }{K^2} \beta(t)}
+	\int_{\frac{a(t)}{\beta(t)}}^{\infty}\,
+	\frac{ \text{d}\mathcal{Y} }{\sqrt{\mathcal{Y}^2 - \frac{a(t)^2}{\beta(t)^2}}}\,\,
+	e^{-\frac{1}{\beta(t)}\mathcal{Y}^2}
+	\label{G_PH_5}
+	\\[1em]
+	\,=\,&
+	\frac{-1}{(2\pi)^2}
+	\int_{-1}^{1}\text{d}t\,
+	e^{-\frac{ q^2 t^2 }{K^2} \beta(t)}
+	\int_{\frac{a(t)}{\beta(t)}}^{\infty}\,
+	\text{d}\mathcal{Y}\,
+	e^{-\frac{1}{\beta(t)}\mathcal{Y}^2}
+	\Bigg[
+		\frac{1}{\mathcal{Y}} 
+		+ 
+		\frac{a(t)^2}{\beta(t)^2}\frac{1}{\mathcal{Y}^3} 
+		+ 
+		\frac{a(t)^4}{\beta(t)^4}\frac{3}{8\mathcal{Y}^5} 
+		+ 
+	\nonumber \\
+	& 
+		\frac{a(t)^6}{\beta(t)^6}\frac{5}{16\mathcal{Y}^7} 
+		+ 
+		\frac{a(t)^8}{\beta(t)^8}\frac{35}{128\mathcal{Y}^9}
+		+ 
+		\frac{a(t)^{10}}{\beta(t)^{10}}\frac{63}{256\mathcal{Y}^{11}}
+		+ 
+		\frac{a(t)^{12}}{\beta(t)^{12}}\frac{231}{1024\mathcal{Y}^{13}}
+		+ 
+		\cdots
+	\Bigg]
+	\nonumber 
+	\\[.5em]
+	\,=\,&
+	\frac{1}{(2\pi)^2}
+	\int_{-1}^{1}\text{d}t\,
+	e^{-\frac{ q^2 t^2 }{K^2} \beta(t)}
+	\frac{1}{2}\int_{\frac{a(t)^2}{\beta(t)^2}}^{\infty}\,
+	\text{d}y\,
+	e^{-\frac{y}{\beta(t)}}
+	\Bigg[
+		\frac{1}{y} 
+		- 
+		\frac{a(t)^2}{\beta(t)^2}\frac{1}{y^2} 
+		+ 
+		\frac{a(t)^4}{\beta(t)^4}\frac{3}{8y^3}
+	\nonumber \\
+	&  
+		- 
+		\frac{a(t)^6}{\beta(t)^6}\frac{5}{16y^4} 
+		+ 
+		\frac{a(t)^8}{\beta(t)^8}\frac{35}{128y^5}
+		+ 
+		\frac{a(t)^{10}}{\beta(t)^{10}}\frac{63}{256y^6}
+		+ 
+		\frac{a(t)^{12}}{\beta(t)^{12}}\frac{231}{1024y^7}
+		+ 
+		\cdots
+	\Bigg]
+	\nonumber 
+	\\[.5em]
+	\,=\,&
+	\frac{1}{(2\pi)^2}
+	\int_{-1}^{1}\text{d}t\,
+	e^{-\frac{ q^2 t^2 }{K^2} \beta(t)}
+	\frac{1}{2}\int_{\frac{a(t)^2}{\beta(t)^3}}^{\infty}\,
+	\text{d}y\,
+	e^{-y}
+	\Bigg[
+		\frac{1}{y} 
+		- 
+		\frac{a(t)^2}{\beta(t)^3}\frac{1}{y^2} 
+		+ 
+		\frac{a(t)^4}{\beta(t)^6}\frac{3}{8y^3} 
+	\nonumber \\
+	& 
+		- 
+		\frac{a(t)^6}{\beta(t)^{9}}\frac{5}{16y^4}  
+		+ 
+		\frac{a(t)^8}{\beta(t)^{12}}\frac{35}{128y^5}
+		+ 
+		\frac{a(t)^{10}}{\beta(t)^{15}}\frac{63}{256y^6}
+		+ 
+		\frac{a(t)^{12}}{\beta(t)^{18}}\frac{231}{1024y^7}
+		+ 
+		\cdots
+	\Bigg]
+	\,.
+	\nonumber 
+\end{align} 
+Performing the $y$-integral in the last line, we obtain:
+\begin{align}
+	&
+	\Gamma_{\text{\tiny PH}}(q\hat{x},0)
+	\,=\,
+	\frac{1}{2(2\pi)^2}
+	\int_{-1}^{1}\text{d}t\,
+	e^{-\frac{ q^2 t^2 }{K^2} \beta(t)} \,\,
+	\Bigg[
+		\Gamma(0,\frac{a(t)^2}{\beta(t)^3}) 
+		\,+\, 
+		\frac{1}{2}\frac{a(t)^2}{\beta(t)^3}\Gamma(-1,\frac{a(t)^2}{\beta(t)^3})
+	\nonumber \\	
+	&
+		\,+\, 
+		\frac{3}{8}\frac{a(t)^4}{\beta(t)^6}\Gamma(-2,\frac{a(t)^2}{\beta(t)^3})
+		\,+\, 
+		\frac{5}{16}\frac{a(t)^6}{\beta(t)^{10}}\Gamma(-3,\frac{a(t)^2}{\beta(t)^3}) 
+		\,+\, 
+		\frac{35}{128}\frac{a(t)^8}{\beta(t)^{12}}\Gamma(-4,\frac{a(t)^2}{\beta(t)^3}) 
+	\nonumber \\	
+	&
+		\,+\, 
+		\frac{63}{256}\frac{a(t)^{10}}{\beta(t)^{15}}\Gamma(-5,\frac{a(t)^2}{\beta(t)^3}) 
+		\,+\, 
+		\frac{231}{1024}\frac{a(t)^{12}}{\beta(t)^{18}}\frac{231}{1024y^7}\Gamma(-6,\frac{a(t)^2}{\beta(t)^3}) 
+		\,+\, 
+		\cdots
+	\Bigg]
+	\label{App_II-Gamma_PH_NZmu_3}
+	\,,
+\end{align}
+where $\Gamma(-n,a)$ is the upper incomplete $\Gamma$-function. Using the identity,
+\begin{align}
+	\Gamma(-n,a)
+	\,=\,
+	\frac{(-1)^n}{n!}\Gamma(0,a)
+	\,+\,
+	e^{-a}\sum_{i=n}^{1} \frac{(-1)^{n-i}}{a^i}\frac{(i-1)!}{n!}
+	\,
+\end{align}
+$\Gamma_{\text{\tiny PH}}(q\hat{x},0)$ can be written as:
+\begin{align}
+	\Gamma_{\text{\tiny PH}}(q\hat{x},0)
+	\,=\,
+	&
+	\frac{1}{2(2\pi)^2}
+	\int_{-1}^{1}\text{d}t\,
+	e^{-\frac{ q^2 t^2 }{K^2} \beta(t)} \,\,
+	\sum_{n=0}^{\infty}
+	C_n \Big(\frac{a(t)^{2}}{\beta(t)^{3}}\Big)^{n}\Gamma\big(-n,\frac{a(t)^2}{\beta(t)^3}\big)
+	\label{App_II-Gamma_PH_NZmu_Series_Final}
+	\\[.5em]
+	\,=\, 
+	&
+	\frac{-1}{2(2\pi)^2}
+	\int_{-1}^{1}\text{d}t\,
+	e^{-\frac{ q^2 t^2 }{K^2} \beta(t)} \,\,
+	\sum_{n=0}^{\infty}
+	C_n \Bigg[
+		e^{-\frac{a(t)^{2}}{\beta(t)^{3}}}
+		\sum_{m=n}^{1} \frac{(m-1)!}{n!}(-1)^{n-m}
+	\nonumber \\
+	&
+		\Big(\frac{a(t)^{2}}{\beta(t)^{3}}\Big)^{n-m}
+		\,+\,
+		\frac{(-1)^n}{n!}\Big(\frac{a(t)^{2}}{\beta(t)^{3}}\Big)^{n}\Gamma\big(0,\frac{a(t)^2}{\beta(t)^3}\big)
+	\Bigg]
+	\nonumber
+	\,,
+\end{align}
+where $C_n$ are the coefficients in the series expansion of $\frac{1}{\sqrt{y^2-1}}$ in $\frac{1}{y}$, and
+\begin{align}
+	&
+	\frac{\alpha(t)^2}{\beta(t)^3}
+	=
+	32\frac{\mu}{K^2}
+	+
+	\Big( \frac{8(t^2-1)}{K^2} + \frac{48\mu(1+t^2)}{\Lambda^2} \Big)q^2
+	+
+	\Big( \frac{12(t^4-1)}{\Lambda^2} + \frac{24 K^2\mu(1+t^2)^2}{\Lambda^4} \Big)q^4
+	\nonumber \\	
+	&
+	+
+	\Big( \frac{6K^2(t^2-1)(t^2+1)^2}{\Lambda^4} + \frac{4\mu K^4(1+t^2)^3}{\Lambda^6} \Big)q^6
+	+
+	\frac{K^4}{\Lambda^6}(t^2-1)(t^2+1)^3 q^8
+	\label{App_II-alpha-beta}
+	\,.
+\end{align}
+From Eqs.~[\ref{App_II-Gamma_PH_NZmu_Series_Final},\ref{App_II-alpha-beta}], one can systematically determine the coefficients of the series expansion of $\Gamma_{\text{\tiny PH}}(q\hat{x},0)$ in $q$ by ignoring all $\mathcal{O}(\mu)$ and $\mathcal{O}(1/K)$ terms as accurately as desired. Using \textit{Mathematica 8}, we expand the integral in Eq.~[\ref{App_II-Gamma_PH_NZmu_3}] (keeping up to $\Gamma(-14,\frac{a(t)^2}{\beta(t)^3})$) in $q$ and then perform the $t$-integral. We find:
+\begin{align}
+	&
+	\Gamma_{\text{\tiny PH}}(q\hat{x},0)
+	\,\approx\,
+	\frac{1}{2(2\pi)^2}
+	\Bigg[
+		\Big(
+			-5.9 
+			- 2\log\frac{\mu}{K^2}
+		\Big) 
+		\,+\,
+		\Big(
+			 - 4\frac{K^2}{\Lambda} 
+			+ 0.33\frac{\Lambda}{\mu} 
+			- 5\frac{\Lambda}{K^2}\log\frac{\mu}{K^2}
+	\nonumber \\	
+	&
+		\Big) \frac{q^2}{\Lambda}
+		\,+\,
+		\Big(
+			  1.4 \frac{K^4}{\Lambda^2} 
+			- 50.4
+			+ \frac{\Lambda^2}{\mu^2}
+			+ 0.5\frac{\Lambda^2}{\mu K^2}
+			- 12.3 \frac{\Lambda^2}{K^4}\log\frac{\mu}{K^2}
+			- 9.86\log\frac{\mu}{K^2}
+		\Big) \frac{q^4}{\Lambda^2}
+	\nonumber \\	
+	&
+		\,+\,
+		\Big(
+			- 0.68\frac{K^6}{\Lambda^3}
+			- 40.5\frac{K^2}{\Lambda}
+			+ 0.0047\frac{\Lambda^3}{\mu^3}
+			+ 0.035\frac{\Lambda^3}{\mu^2K^2}  
+			+ 0.879\frac{\Lambda^3}{\mu K^4}  
+			+ 0.938\frac{\Lambda}{\mu}
+	\nonumber \\	
+	&
+			- 23.5 \frac{\Lambda^3}{K^6}\log\frac{\mu}{K^2}
+			- 43.0 \frac{\Lambda}{K^2}\log\frac{\mu}{K^2}
+			- 5.7 \frac{K^2}{\Lambda}\log\frac{\mu}{K^2}
+		\Big) \frac{q^6}{\Lambda^3}
+		\,+\,
+		\cdots
+	\Bigg]
+	\,.
+\end{align}
+From this, we finally obtain the derivative of $\Gamma_{\text{\tiny PH}}(q\hat{x},0)$ with respect to $\log\Lambda$:
+\begin{align}
+	\partial_{\log \Lambda}\Gamma_{\text{\tiny PH}} (q\hat{x},0)
+	\approx
+	&
+	\frac{1}{2(2\pi)^2}
+	\Bigg[
+		8\frac{K^2}{\Lambda}\frac{q^2}{\Lambda}
+		+
+		\Big(
+			19.7\log\frac{\mu}{K^2} 
+			+  
+			101
+			-
+			5.6\frac{K^4}{\Lambda^2} 
+		\Big)\frac{q^4}{\Lambda^2}
+	\label{App_II-PH_NZmu_qx_l2kF}	
+	\\
+	& 
+		+
+		\Big(
+			-
+			1.87\frac{\Lambda}{\mu}
+			+
+			\big[
+				22.8\frac{K^2}{\Lambda}
+				+
+				86\frac{\Lambda}{K^2}
+			\big]\log\frac{\mu}{K^2}
+			+
+			4.11\frac{K^6}{\Lambda^3}
+			+
+	\nonumber \\
+	&  
+			162\frac{K^2}{\Lambda}
+		\Big)\frac{q^6}{\Lambda^3}
+		+
+		\Big(
+			-
+			0.13\frac{\Lambda^2}{\mu^2}
+			-
+			2.06\frac{K^2}{\mu}
+			+
+			\big[
+				237\frac{\Lambda^2}{K^4}
+				+
+				255
+				+
+	\nonumber \\
+	& 
+				8.7\frac{K^4}{\Lambda^2}
+			\big]\log\frac{\mu}{K^2}
+			+
+			1462
+			-
+			71.5\frac{K^4}{\Lambda^2}
+			-
+			3.16\frac{K^8}{\Lambda^4}
+		\Big)\frac{q^8}{\Lambda^4}
+		+
+		\Big(
+			-
+			0.014\frac{\Lambda^3}{\mu^3}
+	\nonumber \\
+	& 
+			-
+			0.138\frac{K^2}{\Lambda\mu^2}
+			-
+			0.326\frac{\Lambda^3}{K^2\mu^2}
+			-
+			0.716\frac{K^4}{\Lambda\mu}
+			-
+			17.13\frac{\Lambda}{\mu}
+			-
+			12.98\frac{\Lambda^3}{K^4\mu}
+			+
+	\nonumber \\
+	& 
+			\big[
+				-
+				1.262\frac{K^6}{\Lambda^3} 
+				+
+				305\frac{K^2}{\Lambda}
+				+
+				1082\frac{\Lambda}{K^2}
+				+
+				483\frac{\Lambda^3}{K^6}
+			\big]\log\frac{\mu}{K^2} 
+			+
+			2.52\frac{K^{10}}{\Lambda^5}
+	\nonumber \\
+	& 
+			+
+			9.235\frac{K^6}{\Lambda^3}
+			+
+			1987\frac{K^2}{\Lambda}
+		\Big)\frac{q^{10}}{\Lambda^5}
+		+
+		\mathcal{O}(q)^{12}
+	\Bigg]
+	\nonumber
+	\,,
+\end{align}
+
+
+
+
+
+
+
+
+
+
+
+
+%--------------------------------
+\newpage
+\section{Computation of $\Gamma_{\text{\tiny PH}}(q\hat{x},0)$ for $\mu=0$}
+\label{Appendix_II-GammaPH_Zmu}
+
+
+Starting from Eq.~[\ref{App_II-Equation_4}], for the case $\mu=0$ we have:
+\begin{align}
+	\Gamma_{\text{\tiny PH}}(q\hat{x},\Omega=0)
+	\,=\,&
+	\frac{1}{2(2\pi)^2}
+	\int_{-\infty}^{\infty}\text{d}X\,\int_{-1}^{1}\text{d}t\,\,
+	\frac{|X|}{X}
+	\frac{\theta\big(X(t+1)\big)-\theta\big(X(t-1)\big)}{\sqrt{(-X-q^2)^2-2q^2(t+1)X}}
+	\nonumber \\	
+	&
+	e^{-\frac{1}{K^2}(tX+\frac{X^2}{q^2}-q^2)}\,
+	e^{-\frac{X^2(1+t^2)}{2\Lambda^2}}
+	\label{Equation_4_Zero_mu}
+	\,,
+\end{align}
+with no constraint. This can be written as:
+\begin{align}
+	\Gamma_{\text{\tiny PH}}(q\hat{x},0)
+	\,=\,&
+	\frac{1}{(2\pi)^2}
+	\int_{0}^{\infty}\text{d}X\,\int_{-1}^{1}\text{d}t\,\,
+	\frac{1}{\sqrt{(X+q^2)^2-2q^2(t+1)X}}
+	\\	
+	&
+	\exp\Bigg\{-
+		\frac{ 2 \Lambda^2 + q^2 K^2 (1+t^2) }{ 2 \Lambda^2 q^2 K^2 }
+		\Big( X + \frac{ t q^2 \Lambda^2 }{ q^2 K^2 (1+t^2) + 2\Lambda^2 } \Big)^2
+	\nonumber \\
+	&
+		-
+		\frac{ q^2 t^2 \Lambda^2 }{ 2q^2 K^4 (1+t^2) + 4 K^2 \Lambda^2}
+	\Bigg\}
+	\,.
+	\nonumber 
+\end{align}
+Using, $\beta(t)=\frac{ \Lambda^2 }{ q^2 K^2 (1+t^2) + 2 \Lambda^2 }$, the above integral becomes:
+\begin{align}
+	\Gamma_{\text{\tiny PH}}(q\hat{x},0)
+	\,=\,&
+	\frac{1}{(2\pi)^2}
+	\int_{-1}^{1}\text{d}t\,
+	e^{ -\frac{ q^2 t^2 }{2 K^2}\beta(t) }
+	\int_{0}^{\infty}
+	\frac{	
+		\text{d}X\,
+		e^{ -\frac{1}{2q^2 K^2\,\beta(t)} ( X +  t q^2\,\beta(t) )^2}	
+	}{\sqrt{(X+q^2)^2-2q^2(t+1)X}}
+	\,. 
+\end{align}
+Using, $X\to\tilde{X}=\frac{1}{q^2\beta(t)}X$, we get:
+\begin{align}
+	\Gamma_{\text{\tiny PH}}(q\hat{x},0)
+	\,=\,&
+	\frac{1}{(2\pi)^2}
+	\int_{-1}^{1}\text{d}t\,
+	e^{ -\frac{ q^2 t^2 }{2 K^2}\beta(t) }
+	\int_{0}^{\infty}
+	\frac{
+		\text{d}\tilde{X}\,
+		\cancel{q^2\beta(t)}\,
+		e^{ -\frac{t^2 q^2 \beta(t)}{2 K^2} ( \tilde{X} +  t )^2}	
+	}{\cancel{q^2\beta(t)}\sqrt{(\tilde{X}+\frac{1}{\beta(t)})^2-2\tilde{X}\frac{(t+1)}{\beta(t)}}}
+	\,. 
+\end{align}
+The inverse square root in the integrand can be simplified as follows:
+\begin{equation}
+	(\tilde{X}+\frac{1}{\beta(t)})^2-2\tilde{X}\frac{(t+1)}{\beta(t)}
+	\,=\,
+	\tilde{X}^2 - 2t\tilde{X}\frac{1}{\beta(t)} + \frac{1}{\beta(t)^2}
+	\,=\,
+	\big( \tilde{X} - \frac{t}{\beta(t)} \big)^2 + \frac{1-t^2}{\beta(t)^2}
+	\,.
+\end{equation}
+Now, let us break up the $\tilde{X}$ integral. This is because we want to Taylor expand the inverse square root term in the integrand.
+\begin{align}
+	\Gamma_{\text{\tiny PH}}(q\hat{x},0)
+	\,=\,&
+	\frac{1}{(2\pi)^2}
+	\int_{-1}^{1}\text{d}t\,
+	e^{ -\frac{ q^2 t^2 }{2 K^2}\beta(t) }
+	\Bigg[
+		\underbrace{ \int_{0}^{\frac{1}{\beta(t)}}\text{d}\tilde{X} }_{I_1}
+		\,+\,
+		\underbrace{ \int_{\frac{1}{\beta(t)}}^{\infty}\text{d}\tilde{X} }_{I_2}
+	\Bigg]	
+	\frac{
+		e^{ -\frac{t^2 q^2 \beta(t)}{2 K^2} ( \tilde{X} +  t )^2}	
+	}{\sqrt{ ( \tilde{X} - \frac{t}{\beta(t)} )^2 + \frac{1-t^2}{\beta(t)^2} }}
+	\,. 
+\end{align}
+Using \textit{Mathematica}, the first integral is approximately computed as following:
+\begin{align}
+	I_1
+	\,\approx\,&
+	\frac{1}{(2\pi)^2}
+	\int_{-1}^{1}\text{d}t\,
+	e^{ -\frac{ q^2 t^2 }{2 K^2}\beta(t) }
+	\int_{0}^{\frac{1}{\beta(t)}}\text{d}\tilde{X}
+	\frac{1}{\sqrt{ ( \tilde{X} - \frac{t}{\beta(t)} )^2 + \frac{1-t^2}{\beta(t)^2} }}
+	\Big[ 
+		1 - \frac{t^2 q^2 \beta(t)}{2 K^2} ( \tilde{X} +  t )^2 + \cdots
+	\Big]
+	\nonumber 
+	\\[.5em]
+	\,\approx\,&
+	\frac{1}{(2\pi)^2}
+	\int_{-1}^{1}\text{d}t\,
+	e^{ -\frac{ q^2 t^2 }{2 K^2}\beta(t) }
+	\Big[
+		\log\frac{1+\sqrt{2(1-t)}-t}{1-t}
+		-
+		\frac{t^2 q^2 \beta(t)}{2 K^2}
+		\frac{1}{2\Lambda^4}
+		\Big(
+			\cdots
+		\Big)
+		+
+		\cdots
+	\Big]	
+	\,. 
+\end{align}
+we find no singular dependence on $q$ in $I_1$. Next, let us consider $I_2$. Expanding the inverse square root in the integrand of $I_2$ in large $\tilde{X}$, we find:
+\begin{align}
+	I_2
+	\,=\,&
+	\frac{1}{(2\pi)^2}
+	\int_{-1}^{1}\text{d}t\,
+	e^{ -\frac{ q^2 t^2 }{2 K^2}\beta(t) }
+	\int_{\frac{1}{\beta(t)}}^{\infty}\text{d}\tilde{X}	
+	\frac{
+		e^{ -\frac{t^2 q^2 \beta(t)}{2 K^2} ( \tilde{X} +  t )^2}	
+	}{\sqrt{ ( \tilde{X} - \frac{t}{\beta(t)} )^2 + \frac{1-t^2}{\beta(t)^2} }} 
+	\\[.5em]
+	\,\approx\, &
+	\frac{-1}{(2\pi)^2}
+	\int_{-1}^{1}\text{d}t\,
+	e^{ -\frac{ q^2 t^2 }{2 K^2}\beta(t) }
+	\int_{\frac{1}{\beta(t)}}^{\infty}\text{d}\tilde{X}
+	\Bigg[
+		\frac{1}{\tilde{X}}
+		+
+		\frac{t}{\beta(t)}
+		\frac{1}{\tilde{X}^2}
+		+
+		\frac{3t^2-1}{2\beta(t)^2}
+		\frac{1}{\tilde{X}^3}
+		+
+		\frac{t(5t^2-3)}{2\beta(t)^3}
+		\frac{1}{\tilde{X}^4}
+	\nonumber \\
+	& 
+		+
+		\frac{3-30t^2+35t^4}{8\beta(t)^4}
+		\frac{1}{\tilde{X}^5}
+		+
+		\frac{t(15-70t^2+63t^4)}{8\beta(t)^5}
+		\frac{1}{\tilde{X}^6}
+		+
+		\frac{-5+21t^2(5-15t^2+11t^4)}{16\beta(t)^6}
+	\nonumber \\
+	& 
+		\times \frac{1}{\tilde{X}^7}
+		+
+		\cdots
+	\Bigg]
+	e^{ -\frac{t^2 q^2 \beta(t)}{2 K^2} \tilde{X}^2}
+	\Big[
+		1
+		-
+		2\frac{t^2 q^2 \beta(t)}{2 K^2} (\tilde{X}+t)
+		+
+		\cdots
+	\Big]
+	\nonumber
+	\,. 
+\end{align}
+The leading term in the above expansion in $\frac{1}{\tilde{X}}$ results in a singular dependence on $q$ of the form $\log q^2$. Similarly, the remaining terms result in logarithmic dependence on $q$ but accompanied by polynomials in $q^2$. If desired, using \textit{Mathematica}, one can obtain a series expansion in $q$ as accurately as desired.
+
+
+Using \textit{Mathematica 8}, we determine non-analytic terms in $\partial_{\log \Lambda}\Gamma_{\text{\tiny PH}}(q\hat{x},0)$. These terms are all of the form $q^{2n+2} \log \frac{q^2}{K^2}$ ($n\geq1$):
+\begin{align}
+	\partial_{\log \Lambda}\Gamma^{\text{\tiny n.-a.}}_{\text{\tiny PH}}(q\hat{x},0)
+	=&
+	\frac{1}{(2\pi)^2}
+	\Bigg[
+		-
+		0.028 \frac{q^4}{\Lambda^2}
+		-
+		0.368 \frac{K^2}{\Lambda} \frac{q^6}{\Lambda^3}
+		+
+		\Big( 0.473\frac{K^4}{\Lambda^2} + 0.448 \Big) \frac{q^8}{\Lambda^4}
+	\nonumber \\
+	&
+		-
+		\Big( 0.55\frac{K^6}{\Lambda^3} + 0.6\frac{K^2}{\Lambda} \Big) \frac{q^{10}}{\Lambda^5}	
+		+
+		\mathcal{O}(\frac{q^{12}}{\Lambda^6})
+	\Bigg]
+	\log \frac{q^2}{K^2}
+	\,,
+\end{align}
+where we have ignored $\mathcal{O}(\frac{1}{K})$ terms.
+
+
+
+
+
+
+
+
+
+
+
+%--------------------------------
+\newpage
+\section{Computation of $\Gamma_{\text{\tiny PP}}(\mathbf{q}=0,\Omega\ll\Lambda)$}
+\label{Appendix_II-GammaPP}
+
+The particle-particle diagram, $\Gamma_{\text{\tiny PP}}(\mathbf{q},\Omega)$ is given by:
+\begin{align}
+	\Gamma_{\text{\tiny PP}}(\mathbf{q},\Omega)
+	&\,=\,
+	\int'\frac{\text{d}\mathbf{k}}{(2\pi)^2}\int\frac{\text{d}\omega}{2\pi}\,
+	\mathcal{G}_{0}(\mathbf{k+q},\omega+\Omega)\,\mathcal{G}_{0}(-\mathbf{k},-\omega)
+	\nonumber \\[.5em] 	
+	&\,=\,
+	\int'\frac{\text{d}\mathbf{k}}{(2\pi)^2}\int\frac{\text{d}\omega}{2\pi}\,
+	\frac{1}{i(\omega+\Omega)-(\xi_{\mathbf{k+q}}-\mu)}\,\frac{1}{-i\omega-(\xi_{-\mathbf{k}}-\mu)}
+	\nonumber \\[.5em]
+	&=
+	\frac{-1}{(2\pi)^2}\int'\text{d}\mathbf{k} 
+	\frac{\theta(\xi_{\mathbf{k}}-\mu)-\theta(-\xi_{\mathbf{k+q}}+\mu)}
+	     {i\Omega-\xi_{\mathbf{k}}-\xi_{\mathbf{k+q}}+2\mu}\,,
+\end{align}
+where the primes on the integrals indicate that the $\mathbf{k}$-integration is restricted to $|\xi_{\mathbf{k}}|,|\xi_{\mathbf{k+q}}|<\Lambda$ and $|k_+|,|k_-|<K$ (where $k_\pm=k_x\pm k_y$ are the light-cone coordinates) -- see Fig.~[\ref{FS_K_Lambda}]. The reason that we use sharp cutoffs instead of soft cutoffs is for convenience. Note that since we are computing $\Gamma_{\text{\tiny PP}}(\mathbf{q},\Omega\ll\Omega)$ at $\mathbf{q}=0$ the question of whether the cutoffs are soft or sharp becomes irrelevant.
+%
+\begin{figure}[h]   
+        \begin{center}
+	\includegraphics[width=0.5\textwidth]{./Figures/VHove_Lambda_K.pdf}
+	\end{center}
+        \caption[Sharp energy and momentum cutoffs]{\small The Fermi surface and the sharp energy and momentum cutoffs. The sharp momentum cutoff is indicated by the ``diamond''. This specific choice of the momentum cutoff is for convenience.}
+	\label{FS_K_Lambda}
+\end{figure} 
+%
+Setting the transfer momentum $\mathbf{q}$ to zero, for the case $\mu=0$ I have:
+\begin{align}
+	\Gamma_{\text{\tiny PP}}^{\mu=0}(\mathbf{q}=0,\Omega)
+	&\,=\,
+	\frac{-1}{(2\pi)^2}\int'\text{d}\mathbf{k} 
+	\frac{\theta(\xi_{\mathbf{k}})-\theta(-\xi_{\mathbf{k}})}{i\Omega-\xi_{\mathbf{k}}-\xi_{\mathbf{k}}}
+	\,=\,
+	\frac{-1}{(2\pi)^2}\frac{1}{2}\int_{\substack{|k_+K_-|<\Lambda\\|k_\pm|<K}}\text{d}k_+\text{d}k_- 
+	\frac{2\,\text{sgn}(\xi_{\mathbf{k}})}{i\Omega-2\xi_{\mathbf{k}}}
+	\nonumber \\[.5em]
+	&=
+	-\frac{1}{(2\pi)^2}\int_{-K}^{K}\frac{\text{d}k_+}{|k_+|}  
+	\underbrace{
+		\int_{-\text{min}\{\Lambda,|k_+|K\}}^{\text{min}\{\Lambda,|k_+|K\}} \text{d}\xi\,
+		\frac{\text{sgn}(\xi)}{i\Omega-2\xi}
+	}_{I(k_+)}\,,
+	\label{xi-kp}
+\end{align}
+where, in the second line, we used $(k_+,k_-)\to(k_+,\xi=k_+k_-)$ with the Jacobian $\frac{1}{|k_+|}$. The $I(k_+)$ integral gives:
+\begin{align}
+	I(k_+)\,=\,&\int_{-\text{min}\{\Lambda,|k_+|K\}}^{\text{min}\{\Lambda,|k_+|K\}} \text{d}\xi\,
+	\frac{\text{sgn}(\xi)}{i\Omega-2\xi}
+	\nonumber \\[.5em]
+	\,=\,&
+	\int_{0}^{\text{min}\{\Lambda,|k_+|K\}} \text{d}\xi\,
+	\Bigg[ \frac{1}{i\Omega-2\xi} - \frac{1}{i\Omega+2\xi} \Bigg]
+	\nonumber \\[.5em]
+	\,=\,&
+	\int_{0}^{\text{min}\{\Lambda,|k_+|K\}} 
+	\frac{4\xi\,\text{d}\xi\,}{-\Omega^2-4\xi^2}	
+	\nonumber \\[.5em]
+	\,=\,&
+	\frac{-1}{2} \ln\Bigg[\frac{\Omega^2 + 4\big( \text{min}\{\Lambda,|k_+|K\} \big)^2}{\Omega^2}\Bigg]	
+\end{align}
+Plugging this result for $I(k_+)$ into Eq.~[\ref{xi-kp}] and performing the $k_+$-integral, we obtain:
+\begin{align}
+	\Gamma_{\text{\tiny PP}}^{\mu=0}(\mathbf{q}=0,\Omega)
+	&\,=\,
+	\frac{1}{(2\pi)^2}\int_{0}^{K}\frac{\text{d}k_+}{k_+}  
+	\ln\Bigg[\frac{\Omega^2 + 4\big( \text{min}\{\Lambda,k_+K\} \big)^2}{\Omega^2}\Bigg]
+	\\[.5em]
+	&\,=\,
+	\frac{1}{(2\pi)^2}\Bigg[
+		\int_{0}^{\frac{\Lambda}{K}}\frac{\text{d}k_+}{k_+}  
+		\ln\Big(1+\frac{4k_+^2 K^2}{\Omega^2}\Big)
+		+
+		\int_{\frac{\Lambda}{K}}^{K}\frac{\text{d}k_+}{k_+}  
+		\ln\Big(1+\frac{4\Lambda^2}{\Omega^2}\Big)
+	\Bigg]
+	\nonumber \\[.5em]
+	&\,=\,
+	\frac{1}{(2\pi)^2}\Bigg[
+		\frac{1}{2}\int_{0}^{\frac{4\Lambda^2}{\Omega^2}}\frac{\text{d}\kappa}{\kappa}  
+		\ln(1+\kappa)
+		+
+		\ln\frac{K^2}{\Lambda}  
+		\ln\Big(1+\frac{4\Lambda^2}{\Omega^2}\Big)
+	\Bigg]
+	\nonumber \\[.5em]
+	&\,=\,
+	\frac{1}{(2\pi)^2}\Bigg[
+		-\frac{1}{2}\,\text{Li}_{2}(-\frac{4\Lambda^2}{\Omega^2})
+		\,+\,
+		\ln\frac{K^2}{\Lambda}  
+		\ln\Big(1+\frac{4\Lambda^2}{\Omega^2}\Big)
+	\Bigg]\,,
+	\nonumber
+\end{align}
+where, for the first term in the second last line, $\kappa=\frac{\Omega^2}{4K^2}k_+^2$. Using the expansion of the \textit{dilogarithm} function in the large $\frac{4\Lambda^2}{\Omega^2}$ limit,
+\begin{equation}
+	-\text{Li}_{2}(-x)
+	\,\approx\,
+	\frac{\pi^2}{6} + \frac{1}{2}\Big(\ln\frac{1}{x}\Big)^2 + \mathcal{O}(\frac{1}{a})
+	\,,
+\end{equation}
+we get:
+\begin{align}
+	\Gamma_{\text{\tiny PP}}^{\mu=0}(\mathbf{q}=0,\Omega\ll\Lambda)
+	\,\approx\,&	
+	\frac{1}{(2\pi)^2}\Bigg[
+		\ln\frac{K^2}{\Lambda}  
+		\ln\Big(1+\frac{4\Lambda^2}{\Omega^2}\Big)
+		+
+		\frac{\pi^2}{12} 
+		+ 
+		\frac{1}{4}\Big(\ln\frac{\Omega^2}{4\Lambda^2}\Big)^2 
+	\nonumber \\
+	& \qquad \quad 
+		+ 
+		\mathcal{O}(\frac{\Omega^2}{4\Lambda^2})
+	\Bigg]\,.
+	\label{Gamma_PP_Zmu}
+\end{align}
+For $\partial_{\ln\Lambda}\Gamma_{\text{\tiny PP}}^{\mu=0}(\mathbf{q}=0,\Omega\ll\Lambda)$ I obtain:
+\begin{equation}
+	\partial_{\ln\Lambda}\Gamma_{\text{\tiny PP}}^{\mu=0}(0,\Omega)
+	\,\approx\,
+	\frac{1}{(2\pi)^2}\Bigg[
+		\frac{8\Lambda^2}{4\Lambda^2+\Omega^2}\ln\frac{K^2}{\Lambda}
+		\,-\,
+		\ln\Big( 1 + \frac{\Omega^2}{4\Lambda^2} \Big)
+		\,+\,
+		\mathcal{O}(\frac{\Omega^2}{4\Lambda^2})
+	\Bigg]
+	\,.
+\end{equation}
+
+Repeating the same calculations for $\mu\neq0$, we find:
+\begin{comment}
+Next, let us consider the case $\mu>0$. Starting with the first integral in Eq.~[\ref{xi-kp}] with a non-zero $\mu$, I have:
+
+\begin{align}
+	\Gamma_{\text{\tiny PP}}^{\mu>0}(\mathbf{q}=0,\Omega)
+	&\,=\,
+	\frac{-1}{(2\pi)^2}\int'\text{d}\mathbf{k} \,
+	\frac{2\text{sgn}(\xi_{\mathbf{k}}-\mu)}{i\Omega-2(\xi_{\mathbf{k}}-\mu)}
+	\nonumber \\[.5em]
+	&\,=\,
+	\frac{-1}{(2\pi)^2} \int_{-K}^{K}\text{d}k_+\,\int_{-K}^{K}\text{d}k_-
+	\,\,\theta(\Lambda-|\xi_{\mathbf{k}}-\mu|)\,\,
+	\frac{\text{sgn}(\xi_{\mathbf{k}}-\mu)}{i\Omega-2(\xi_{\mathbf{k}}-\mu)}
+	\nonumber \\[.5em]
+	&\,=\,
+	\frac{-1}{(2\pi)^2} \int_{-K}^{K}\frac{\text{d}k_+}{|k_+|}\,
+	\int_{\text{Max}\{-K|k_+|\,,\,-\Lambda+\mu\}}^{\text{min}\{K|k_+|\,,\,\Lambda+\mu\}}\text{d}\xi\,
+	\frac{\text{sgn}(\xi-\mu)}{i\Omega-2(\xi-\mu)}
+	\nonumber \\[.5em]
+	&\,=\,
+	\frac{-2}{(2\pi)^2} \int_{0}^{K}\frac{\text{d}k_+}{k_+}\,
+	\int_{-\text{min}\{Kk_++\mu\,,\,\Lambda\}}^{\text{min}\{Kk_+-\mu\,,\,\Lambda\}}\text{d}\varepsilon\,
+	\frac{\text{sgn}(\varepsilon)}{i\Omega-2\varepsilon}
+	\,,
+	\label{NZmu_xi-kp}
+\end{align}
+where, in the second line I used $(k_+,k_-)\to(k_+,\xi=k_+k_-)$ and in the last line $\xi\to\varepsilon=\xi-\mu$. I should break up the $k_+$ integral as following:
+
+\begin{equation}
+	%\int_{0}^{K}\frac{\text{d}k_+}{k_+} (\cdots)
+	\Gamma_{\text{\tiny PP}}^{\mu>0}%(\mathbf{q}=0,\Omega)
+	\,=\,
+	\frac{-1}{2\pi^2}\Bigg[
+	\underbrace{
+		\int_{0}^{\frac{\Lambda-\mu}{K}}\frac{\text{d}k_+}{k_+} 
+		\int_{-Kk_+-\mu}^{Kk_+-\mu}%\text{d}\varepsilon\,
+		%\frac{\text{sgn}(\varepsilon)}{i\Omega-2\varepsilon}
+		(\cdots)
+	}_{I_1}
+	\,+\,
+	\underbrace{
+		\int_{\frac{\Lambda-\mu}{K}}^{\frac{\Lambda+\mu}{K}}\frac{\text{d}k_+}{k_+}  
+		\int_{-\Lambda}^{Kk_+-\mu}\text{d}\varepsilon\,
+		%\frac{\text{sgn}(\varepsilon)}{i\Omega-2\varepsilon}
+		(\cdots)
+	}_{I_2}
+	\,+\,
+	\underbrace{
+		\int_{\frac{\Lambda+\mu}{K}}^{K}\frac{\text{d}k_+}{k_+}  
+		\int_{-\Lambda}^{\Lambda}\text{d}\varepsilon\,
+		%\frac{\text{sgn}(\varepsilon)}{i\Omega-2\varepsilon}
+		(\cdots)
+	}_{I_3}
+	\Bigg]\,.
+\end{equation}
+I will compute these three integrals separately. Let's first compute $\partial_{\ln\Lambda}\Gamma_{\text{\tiny PP}}^{\mu>0}$:
+
+\begin{align}
+	\partial_{\ln\Lambda}\Gamma_{\text{\tiny PP}}^{\mu>0}
+	\,=\,&
+	\frac{-1}{2\pi^2}\Bigg[
+	\cancel{
+		\Lambda \frac{1}{K}\frac{K}{\Lambda-\mu}
+		%\int_{0}^{\frac{\Lambda-\mu}{K}}\frac{\text{d}k_+}{k_+} 
+		\int_{-\Lambda}^{\Lambda-2\mu}\text{d}\varepsilon\,
+		\frac{\text{sgn}(\varepsilon)}{i\Omega-2\varepsilon}
+	}
+	\\[.5em]
+	\,+\,
+	&
+	\Lambda
+	\int_{\frac{\Lambda-\mu}{K}}^{\frac{\Lambda+\mu}{K}}\frac{\text{d}k_+}{k_+}  
+	%\int_{-\Lambda}^{Kk_+-\mu}\text{d}\varepsilon\,
+	\frac{-1}{i\Omega+2\Lambda}
+	+
+	\cancel{
+		(-\Lambda) \frac{1}{K}\frac{K}{\Lambda-\mu}
+		%\int_{\frac{\Lambda-\mu}{K}}^{\frac{\Lambda+\mu}{K}}\frac{\text{d}k_+}{k_+}  
+		\int_{-\Lambda}^{\Lambda-2\mu}\text{d}\varepsilon\,
+		\frac{\text{sgn}(\varepsilon)}{i\Omega-2\varepsilon}
+	}
+	+
+	\bcancel{
+		\Lambda\frac{1}{K}\frac{K}{\Lambda+\mu}
+		%\int_{\frac{\Lambda-\mu}{K}}^{\frac{\Lambda+\mu}{K}}\frac{\text{d}k_+}{k_+}  
+		\int_{-\Lambda}^{\Lambda}\text{d}\varepsilon\,
+		\frac{\text{sgn}(\varepsilon)}{i\Omega-2\varepsilon}
+	}
+	\nonumber
+	\\[.5em]
+	\,+\,
+	&
+	\bcancel{
+		(-\Lambda)\frac{1}{K}\frac{K}{\Lambda+\mu}
+		%\int_{\frac{\Lambda+\mu}{K}}^{K}\frac{\text{d}k_+}{k_+}  
+		\int_{-\Lambda}^{\Lambda}\text{d}\varepsilon\,
+		\frac{\text{sgn}(\varepsilon)}{i\Omega-2\varepsilon}
+	}
+	+
+	\Lambda	
+	\int_{\frac{\Lambda+\mu}{K}}^{K}\frac{\text{d}k_+}{k_+}  
+	%\int_{-\Lambda}^{\Lambda}\text{d}\varepsilon\,
+	\frac{-1}{i\Omega+2\Lambda}
+	+
+	\Lambda	
+	\int_{\frac{\Lambda+\mu}{K}}^{K}\frac{\text{d}k_+}{k_+}  
+	%\int_{-\Lambda}^{\Lambda}\text{d}\varepsilon\,
+	\frac{1}{i\Omega-2\Lambda}
+	\Bigg]
+	\nonumber
+	\\[1em]
+	\,=\,
+	&
+	\frac{-1}{2\pi^2}
+	\Bigg[
+		-\frac{\Lambda}{i\Omega+2\Lambda}\ln\Big( \frac{\Lambda+\mu}{\Lambda-\mu} \Big)
+		\,-\,
+		\frac{4\Lambda^2}{\Omega^2+4\Lambda^2}\ln\Big( \frac{K^2}{\Lambda+\mu} \Big)
+	\Bigg]
+	\nonumber\,.
+\end{align}
+Thus,
+
+\begin{equation}
+\boxed{ 
+	\partial_{\Lambda}\Gamma_{\text{\tiny PP}}^{\mu>0}(\mathbf{q}=0,\Omega\to0)
+	\,=\,
+	{\color{blue}
+	\frac{1}{2\pi^2}\Bigg[
+		\frac{1}{2}\ln\Big( \frac{\Lambda+\mu}{\Lambda-\mu} \Big)
+		\,+\,
+		\ln\Big( \frac{K^2}{\Lambda+\mu} \Big)
+	\Bigg]
+	\,,
+}}
+	\label{dGamma_NZmu_1}
+\end{equation}
+Which, upon setting $\mu$ to zero reduces to what I previously found for $\Gamma_{\text{\tiny PP}}^{\mu=0}(\mathbf{q}=0,\Omega\to0)$. Let us directly compute $\Gamma_{\text{\tiny PP}}^{\mu>0}(\mathbf{q}=0,\Omega)$. For $I_1$, I have:
+
+\begin{align}
+	I_1
+	&\,=\,
+	\int_{0}^{\frac{\Lambda-\mu}{K}}\frac{\text{d}k_+}{k_+}\,
+	\int_{-Kk_+-\mu}^{Kk_+-\mu}\text{d}\varepsilon\,
+	\frac{\text{sgn}(\varepsilon)}{i\Omega-2\varepsilon}
+	\label{I1}
+	\\[.5em]
+	&\,=\,
+	\int_{0}^{\frac{\mu}{K}}\frac{\text{d}k_+}{k_+}\,
+	\int_{-Kk_+-\mu}^{Kk_+-\mu}\text{d}\varepsilon\,
+	\frac{\text{sgn}(\varepsilon)}{i\Omega-2\varepsilon}
+	\,+\,	
+	\int_{\frac{\mu}{K}}^{\frac{\Lambda-\mu}{K}}\frac{\text{d}k_+}{k_+}\,
+	\int_{-Kk_+-\mu}^{Kk_+-\mu}\text{d}\varepsilon\,
+	\frac{\text{sgn}(\varepsilon)}{i\Omega-2\varepsilon}
+	\nonumber 
+	\\[.5em]
+	&\,=\,
+	\int_{0}^{\frac{\mu}{K}}\frac{\text{d}k_+}{k_+}\,
+	\int_{-Kk_+-\mu}^{Kk_+-\mu}\text{d}\varepsilon\,
+	\frac{\text{sgn}(\varepsilon)}{i\Omega-2\varepsilon}
+	\,+\,	
+	\int_{\frac{\mu}{K}}^{\frac{\Lambda-\mu}{K}}\frac{\text{d}k_+}{k_+}\,
+	\Bigg[
+		\int_{-Kk_+-\mu}^{-Kk_++\mu}\text{d}\varepsilon
+		\,+\,
+		\int_{-(Kk_+-\mu)}^{Kk_+-\mu}\text{d}\varepsilon
+	\Bigg]\,
+	\frac{\text{sgn}(\varepsilon)}{i\Omega-2\varepsilon}
+	\nonumber 
+	\\[.5em]
+	&\,=\,
+	\int_{0}^{\frac{\mu}{K}}\frac{\text{d}k_+}{k_+}\,
+	\int_{-Kk_+-\mu}^{Kk_+-\mu}\,
+	\frac{-\text{d}\varepsilon}{i\Omega-2\varepsilon}
+	\,+\,	
+	\int_{\frac{\mu}{K}}^{\frac{\Lambda-\mu}{K}}\frac{\text{d}k_+}{k_+}\,
+	\int_{-Kk_+-\mu}^{-Kk_++\mu}\,
+	\frac{-\text{d}\varepsilon}{i\Omega-2\varepsilon}
+	\,+\,
+	\int_{\frac{\mu}{K}}^{\frac{\Lambda-\mu}{K}}\frac{\text{d}k_+}{k_+}\,
+	\int_{0}^{Kk_+-\mu}\,
+	\frac{-4\varepsilon\,\text{d}\varepsilon}{\Omega^2+4\varepsilon^2}
+	\nonumber 
+	\\[.5em]
+	&\,=\,
+	\,-\,
+	\underbrace{
+		\int_{0}^{\frac{\mu}{K}}\frac{\text{d}k_+}{k_+}\,
+		\int_{-Kk_+-\mu}^{Kk_+-\mu}\,
+		\frac{\text{d}\varepsilon}{i\Omega-2\varepsilon}
+	}_{I_{11}}
+	\nonumber \\[.5em]
+	&\quad
+	\,-\,	
+	\underbrace{
+		\int_{\frac{\mu}{K}}^{\frac{\Lambda-\mu}{K}}\frac{\text{d}k_+}{k_+}\,
+		\int_{-Kk_+-\mu}^{-Kk_++\mu}\,
+		\frac{\text{d}\varepsilon}{i\Omega-2\varepsilon}
+	}_{I_{12}}
+	\nonumber \\[.5em]
+	&\quad
+	\,-\,
+	\frac{1}{2}
+	\underbrace{
+		\int_{\frac{\mu}{K}}^{\frac{\Lambda-\mu}{K}}\frac{\text{d}k_+}{k_+}\,
+		\ln\Big( 1 + 4\frac{K^2}{\Omega^2}(k_+-\frac{\mu}{K})^2 \Big)
+	}_{I_{13}}
+	\,.	
+	\nonumber 
+\end{align}
+I compute these three integrals separately. For simplicity, I assume $\Omega>0$. For $I_{11}$ I get:
+
+\begin{align}
+	I_{11}
+	\,=\,&
+	\int_{0}^{\frac{\mu}{K}}\frac{\text{d}k_+}{k_+}\,
+	\int_{-Kk_+-\mu}^{Kk_+-\mu}\,
+	\frac{\text{d}\varepsilon}{i\Omega-2\varepsilon}
+	\\[.5em]
+	\,=\,&
+	-\frac{1}{2}\lim_{a\to0}
+	\int_{a}^{\mu}\frac{\text{d}\tilde{k}_+}{\tilde{k}_+}\,
+	\Big[
+		\ln( i\Omega - 2\tilde{k}_+ + 2\mu )
+		\,-\,
+		\ln( i\Omega + 2\tilde{k}_+ + 2\mu )
+	\Big]
+	\nonumber	
+	\\[.5em]
+	\,=\,& \color{blue}
+	-\frac{1}{2}\Bigg[
+		\frac{\pi^2}{6}
+		+ 
+		\ln \Big( \frac{-2\mu}{i\Omega + 2\mu} \Big)\ln \Big( \frac{i\Omega + 2\mu}{i\Omega + 4\mu} \Big)
+		-
+		\text{Li}_{2}\Big(\frac{i\Omega + 4\mu}{i\Omega+2\mu}\Big)
+		-
+		\text{Li}_{2}\Big(\frac{2\mu}{i\Omega+2\mu}\Big)
+	\Bigg]
+	\,,
+	\nonumber
+\end{align}
+where, in the second last line, $\tilde{k}_+ = K k_+$ and the integration and taking the limit $a\to0$ in the last line was done using \textit{Mathematica 8.1}. Note that the above result does not depend on neither the energy cutoff, nor the momentum cutoff. In the the limit $\Omega\to0$, I find:
+
+
+\begin{align}
+	\lim_{\Omega\to0}I_{11}
+	\,=\,& \color{blue}
+	-\frac{1}{2}\Bigg[
+		\frac{\pi^2}{6}
+		+ 
+		i\pi\,\ln(\frac{1}{2})
+		+\text{Li}_{2}(\frac{1}{2})+\frac{\pi^2}{6}+\frac{1}{2}\Big( \ln(2) + i\pi \Big)^2	
+		-
+		\text{Li}_{2}(1)
+	\Bigg]
+	\,,
+	\nonumber
+\end{align}
+where, again, I have assumed $\Omega>0$ and used the identity (see \href{http://dlmf.nist.gov/25.12}{DLMF}),
+
+\begin{equation}
+	\text{Li}_{2}(z)+\text{Li}_{2}(\frac{1}{z})\,=\,-\frac{\pi^2}{6} - \frac{1}{2}\Big(\ln(-z)\Big)^2
+	\qquad,\qquad
+	z\in \mathbb{C}\backslash(1,\infty)
+	\,.
+\end{equation}
+
+Similarly, for $I_{12}$ I have:
+
+\begin{align}
+	I_{12}
+	\,=\,&
+	\int_{\frac{\mu}{K}}^{\frac{\Lambda-\mu}{K}}\frac{\text{d}k_+}{k_+}\,
+	\int_{-Kk_+-\mu}^{-Kk_++\mu}\,
+	\frac{\text{d}\varepsilon}{i\Omega-2\varepsilon}
+	\\[.5em]
+	\,=\,&
+	-\frac{1}{2}
+	\int_{\mu}^{\Lambda-\mu}\frac{\text{d}\tilde{k}_+}{\tilde{k}_+}\,
+	\Big[
+		\ln\big( i\Omega + 2\tilde{k}_+ - 2\mu \big)
+		\,-\,
+		\ln\big( i\Omega + 2\tilde{k}_+ + 2\mu \big)
+	\Big]
+	\nonumber
+	\\[.5em]
+	\,=\,&\color{blue}
+	-\frac{1}{2}\,
+	\Bigg[
+		-
+		\ln(2\Lambda+ i \Omega)\ln\Big( -\frac{2\Lambda-2\mu}{2\mu + i\Omega} \Big)
+		+
+		\ln(4\mu+i\Omega)\ln\Big( -\frac{2\mu}{2\mu + i\Omega} \Big)
+	\nonumber
+	\\
+	&\qquad \quad \color{blue}
+		+
+		\ln(2\Lambda-4\mu + i\Omega)\ln\Big( \frac{2\Lambda-2\mu}{2\mu - i\Omega} \Big)
+		-
+		\ln(i\Omega)\ln\Big( \frac{2\mu}{2\mu - i\Omega} \Big)
+	\nonumber
+	\\
+	&\qquad \quad \color{blue}
+		+
+		\text{Li}_{2}\Big(\frac{i\Omega+4\mu}{i\Omega+2\mu}\Big)
+		-
+		\text{Li}_{2}\Big(\frac{i\Omega+2\Lambda}{i\Omega+2\mu}\Big)
+		-
+		\text{Li}_{2}\Big(\frac{i\Omega}{i\Omega-2\mu}\Big)
+		+
+		\text{Li}_{2}\Big(\frac{2\Lambda-4\mu+i\Omega}{i\Omega-2\mu}\Big)
+	\Bigg]
+	\,,
+	\nonumber
+\end{align}
+where, $\tilde{k}_+ = K k_+$. Taking the limit $\Omega\to0$, I find:
+
+\begin{align}
+	\lim_{\Omega\to0}I_{12}
+	\,=\,&\color{blue}
+	-\frac{1}{2}\,
+	\Bigg[
+		-
+		\ln(2\Lambda)\ln\Big( \frac{\Lambda-\mu}{\mu} \Big)
+		+
+		i\pi\ln\Big(\frac{2\mu}{\Lambda}\Big)
+		+
+		\ln(2\Lambda-4\mu)\ln\Big( \frac{\Lambda-\mu}{\mu} \Big)
+		-\text{Li}_{2}(\frac{1}{2})
+	\nonumber
+	\\
+	&\qquad \quad \color{blue}
+		-\frac{\pi^2}{6}-\frac{1}{2}\Big( \ln(2) + i\pi \Big)^2
+		+\frac{\pi^2}{6} + \frac{1}{2}\Big( \ln(\frac{\Lambda}{\mu}) + i\pi \Big)^2 + \text{Li}_{2}\Big(	\frac{\mu}{\Lambda} \Big)	
+		+
+		\text{Li}_{2}\Big(\frac{\Lambda-2\mu}{-\mu}\Big)	
+	\Bigg]
+	\,,
+	\nonumber
+\end{align}
+For $I_{13}$, I have:
+
+\begin{align}
+	I_{13}
+	\,=\,&
+	\int_{\frac{\mu}{K}}^{\frac{\Lambda-\mu}{K}}\frac{\text{d}k_+}{k_+}\,
+	\ln\Big( 1 + 4\frac{K^2}{\Omega^2}(k_+-\frac{\mu}{K})^2 \Big)
+	\\[.5em]
+	=\,&
+	\int_{\mu}^{\Lambda-\mu}\frac{\text{d}\tilde{k}_+}{\tilde{k}_+}\,
+	\ln\Big( 1 + \frac{4}{\Omega^2}(\tilde{k}_+-\mu)^2 \Big)
+	\,=\,
+	\int_{0}^{\frac{2(\Lambda-2\mu)}{|\Omega|}}\frac{\text{d}\kappa}{\kappa+\frac{2\mu}{|\Omega|}}\,
+	\ln(1 + \kappa^2)
+	\,,
+	\nonumber
+\end{align}
+where, in the last line I used $\kappa=\frac{1}{2}|\Omega|\tilde{k}_++\mu$ (as before, $\tilde{k}_+ = K k_+$). Using \textit{Mathematica 8.1}, I obtain:
+
+\begin{align}
+	I_{13}
+	\,=\,& \color{blue}
+	\Bigg[ 		
+		-
+		\ln(2\mu-i\Omega)\ln(2\Lambda-4\mu+i\Omega)
+		+
+		\frac{i\pi}{2}\ln(\Omega^2+4\mu^2)
+		-
+		\ln(2\mu+i\Omega)\ln(-2\Lambda+4\mu+i\Omega)
+	\nonumber
+	\\
+	&\quad \color{blue}
+		+
+		\ln(\Omega)\ln\Big( \frac{4\mu^2+\Omega^2}{4(\Lambda-\mu)^2} \Big)
+		+
+		\ln(2\Lambda-2\mu)\ln\Big( 4(\Lambda-2\mu)^2 + \Omega^2 \Big)
+	\nonumber
+	\\
+	&\quad \color{blue}
+		+
+		\text{Li}_{2}\Big(\frac{-2\Lambda+4\mu+i\Omega}{i\Omega+2\mu}\Big)
+		-
+		\text{Li}_{2}\Big(\frac{i\Omega}{i\Omega+2\mu}\Big)
+		-
+		\text{Li}_{2}\Big(\frac{i\Omega}{i\Omega-2\mu}\Big)
+		+
+		\text{Li}_{2}\Big(\frac{2\Lambda-4\mu+i\Omega}{i\Omega-2\mu}\Big)
+	\Bigg]
+	\,.
+	\nonumber
+\end{align}
+And, in the limit $\Omega\to0$,
+\begin{align} 
+	\lim_{\Omega\to0}I_{13}
+	\,=\,& \color{blue}
+	\Bigg[ 		
+		-
+		\ln(2\mu)\ln(2\Lambda-4\mu)
+		+
+		\frac{i\pi}{2}\ln(4\mu^2)
+		-
+		\ln(2\mu)\Big( \ln(2\Lambda-4\mu) + i\pi \Big)
+	\nonumber
+	\\
+	&\quad \color{blue}
+		+
+		\ln(\Omega^2)\ln\Big( \frac{\mu}{\Lambda-\mu} \Big)
+		+
+		\ln(2\Lambda-2\mu)\ln\big( 4(\Lambda-2\mu)^2 \big)
+		+
+		2\text{Li}_{2}\Big(\frac{\Lambda-2\mu}{-\mu}\Big)
+	\Bigg]
+	\,.
+	\nonumber
+\end{align}
+
+%====
+Next consider $I_2$:
+
+\begin{align}
+	I_2
+	&\,=\,
+	\int_{\frac{\Lambda-\mu}{K}}^{\frac{\Lambda+\mu}{K}}\frac{\text{d}k_+}{k_+}\,
+	\int_{-\Lambda}^{Kk_+-\mu}\text{d}\varepsilon\,
+	\frac{\text{sgn}(\varepsilon)}{i\Omega-2\varepsilon}
+	\label{I2}
+	\\[.5em]
+	&\,=\,
+	\int_{\frac{\Lambda-\mu}{K}}^{\frac{\Lambda+\mu}{K}}\frac{\text{d}k_+}{k_+}\,
+	\Bigg[
+		\int_{-\Lambda}^{\Lambda}\text{d}\varepsilon
+		\,-\,
+		\int_{Kk_+-\mu}^{\Lambda}\text{d}\varepsilon
+	\Bigg]\,
+	\frac{\text{sgn}(\varepsilon)}{i\Omega-2\varepsilon}
+	\nonumber 
+	\\[.5em]
+	&\,=\,
+	\int_{\Lambda-\mu}^{\Lambda+\mu}\frac{\text{d}\tilde{k}_+}{\tilde{k}_+}\,
+	\int_{0}^{\Lambda}\text{d}\varepsilon\,
+	\frac{-4\varepsilon\,\text{d}\varepsilon}{\Omega^2+4\varepsilon^2}
+	\,-\,
+	\int_{\Lambda-\mu}^{\Lambda+\mu}\frac{\text{d}\tilde{k}_+}{\tilde{k}_+}\,
+	\int_{\tilde{k}_+-\mu}^{\Lambda}\,
+	\frac{\text{d}\varepsilon}{i\Omega-2\varepsilon}
+	\nonumber 
+	\\[.5em]
+	&\,=\,\color{blue}
+	\,-\,\frac{1}{2}
+	\ln\big(\frac{\Lambda+\mu}{\Lambda-\mu}\big)\,
+	\ln(1+4\frac{\Lambda^2}{\Omega^2})
+	\,+\,
+	\frac{1}{2}
+	\underbrace{
+		\int_{\Lambda-\mu}^{\Lambda+\mu}\frac{\text{d}\tilde{k}_+}{\tilde{k}_+}\,
+		\Big[
+			\ln\big(2\Lambda-i\Omega\big)
+			\,-\,
+			\ln\big(2\tilde{k}_+-2\mu-i\Omega\big)
+		\Big]
+	}_{I_{22}}
+	\nonumber
+\end{align}
+It remains to deal with the leftover integral $I_{22}$. Using \textit{Mathematica 8.1}, I obtain:
+
+\begin{align}
+	I_{22}
+	\,=\,
+	&\int_{\Lambda-\mu}^{\Lambda+\mu}\frac{\text{d}\tilde{k}_+}{\tilde{k}_+}\,
+		\Big[
+			\ln\big(2\Lambda-i\Omega\big)
+			\,-\,
+			\ln\big(2\tilde{k}_+-2\mu-i\Omega\big)
+		\Big]
+	\label{I22}
+	\\[.5em]
+	\,=\,&
+	\ln\Big( \frac{\Lambda+\mu}{\Lambda-\mu} \Big) \ln(2\Lambda-i\Omega)
+	-
+	\int_{\Lambda-\mu}^{\Lambda+\mu}\frac{\text{d}\tilde{k}_+}{\tilde{k}_+}\,
+	\ln\big(2\tilde{k}_+-2\mu-i\Omega\big)	
+	\nonumber	
+	\\[.5em]
+	\,=\,& 
+	\ln\Big( \frac{\Lambda+\mu}{\Lambda-\mu} \Big) \ln(2\Lambda-i\Omega)
+	-
+	\Bigg[
+		\ln(2\Lambda-i\Omega)\ln\Big( \frac{2\Lambda+2\mu}{i\Omega+2\mu} \Big)
+		-
+		\ln(2\Lambda-4\mu-i\Omega)\ln\Big( \frac{2\Lambda-2\mu}{i\Omega+2\mu} \Big)
+	\nonumber	
+	\\[.5em]
+	&\qquad \qquad \qquad 
+		+
+		\text{Li}_{2}\Big(\frac{-2\Lambda+i\Omega}{i\Omega+2\mu}\Big)
+		-
+		\text{Li}_{2}\Big(\frac{-2\Lambda+4\mu+i\Omega}{i\Omega+2\mu}\Big)
+	\Bigg]
+	\nonumber 
+\end{align}
+Finally, for $I_2$ I get:
+
+\begin{align}
+	I_2
+	\,=\,& \color{blue}
+	-\frac{1}{2}
+	\Bigg[
+		\ln\big(\frac{\Lambda+\mu}{\Lambda-\mu}\big)\,\ln(1+4\frac{\Lambda^2}{\Omega^2})
+		\,-\
+		\ln\Big( \frac{\Lambda+\mu}{\Lambda-\mu} \Big) \ln(2\Lambda-i\Omega)
+		\,+\,
+		\ln(2\Lambda-i\Omega)\ln\Big( \frac{2\Lambda+2\mu}{i\Omega+2\mu} \Big)	
+	\\[.5em]
+	&\qquad \color{blue}
+		\,-\
+		\ln(2\Lambda-4\mu-i\Omega)\ln\Big( \frac{2\Lambda-2\mu}{i\Omega+2\mu} \Big)
+		\,+\
+		\text{Li}_{2}\Big(\frac{-2\Lambda+i\Omega}{i\Omega+2\mu}\Big)
+		\,-\,
+		\text{Li}_{2}\Big(\frac{-2\Lambda+4\mu+i\Omega}{i\Omega+2\mu}\Big)
+	\Bigg]\,.
+	\nonumber 
+\end{align}
+And,
+
+
+\begin{align}
+	\lim_{\Omega\to0}I_2
+	\,=\,& \color{blue}
+	-\frac{1}{2}
+	\Bigg[
+		\ln\big(\frac{\Lambda+\mu}{\Lambda-\mu}\big)\,\ln(1+4\frac{\Lambda^2}{\Omega^2})
+		\,-\
+		\ln\Big( \frac{\Lambda+\mu}{\Lambda-\mu} \Big) \ln(2\Lambda)
+		\,+\,
+		\ln(2\Lambda)\ln\Big( \frac{\Lambda+\mu}{\mu} \Big)	
+	\\[.5em]
+	&\qquad \color{blue}
+		\,-\
+		\ln(2\Lambda-4\mu)\ln\Big( \frac{\Lambda-\mu}{\mu} \Big)
+		\,+\
+		\text{Li}_{2}\Big(-\frac{\Lambda}{\mu}\Big)
+		\,-\,
+		\text{Li}_{2}\Big(\frac{\Lambda-2\mu}{-\mu}\Big)
+	\Bigg]\,.
+	\nonumber 
+\end{align}
+%====
+Finally, for $I_3$ I have:
+
+\begin{align}
+	I_3
+	&\,=\,
+	\int_{\frac{\Lambda+\mu}{K}}^{K}\frac{\text{d}k_+}{k_+}
+	\int_{-\Lambda}^{\Lambda}\text{d}\varepsilon\,
+	\frac{\text{sgn}(\varepsilon)}{i\Omega-2\varepsilon}
+	\,=\,
+	\int_{\frac{\Lambda+\mu}{K}}^{K}\frac{\text{d}k_+}{k_+}
+	\int_{0}^{\Lambda}\text{d}\varepsilon\,
+	\frac{-4\varepsilon\,\text{d}\varepsilon}{\Omega^2+4\varepsilon^2}
+	\label{I3}
+	\\[.5em]
+	&\,=\,\color{blue}
+	-\frac{1}{2}
+	\ln\big(\frac{K^2}{\Lambda+\mu}\big)\,
+	\ln\big(1+4\frac{\Lambda^2}{\Omega^2}\big)
+	\nonumber
+\end{align}
+%
+%
+%
+%=========
+Finally, putting all these pieces together, for $\Gamma_{\text{\tiny PP}}^{\mu>0}(\mathbf{q}=0,\Omega)$ I find:
+\end{comment}
+\begin{align}
+	\Gamma_{\text{\tiny PP}}^{\mu>0}(0,\Omega)
+	%\,=\,&
+	%\frac{-1}{2\pi^2}
+	%\Big(
+	%	I_1 + I_2 + I_3 
+	%\Big)
+	%\,=\,
+	%\frac{-1}{2\pi^2}\Big(
+	%	- I_{11} - I_{12} - \frac{1}{2}I_{13} + I_2 + I_3 
+	%\Big)
+	%\\[.5em]
+	\,\approx\,
+	&
+	\frac{-1}{2\pi^2}     
+	\Bigg[
+		\frac{1}{2}
+		\Bigg(
+			-\frac{\pi^2}{6}+\text{Li}_{2}(\frac{1}{2})+\frac{\pi^2}{6}+\frac{1}{2}\Big(\ln(2)\Big)^2-	\text{Li}_{2}(1)
+		\Bigg)
+		+
+		\frac{1}{2}
+		\Bigg(
+	\nonumber
+	\\[.5em]
+	& 
+			\ln\Big( \frac{\Lambda-2\mu}{\Lambda} \Big)
+			\ln\Big( \frac{\Lambda-\mu}{\mu} \Big)   
+			-
+			\frac{1}{2}\Big(\ln2\Big)^2
+			+
+			\text{Li}_{2}(\frac{1}{2})
+			+
+			\text{Li}_{2}(\frac{\mu}{\Lambda})
+			+
+			\frac{1}{2}\Big( \ln(\frac{\Lambda}{\mu}) \Big)^2
+	\nonumber
+	\\[.5em]
+	&     
+			+
+			\text{Li}_{2}(\frac{\Lambda-2\mu}{-\mu})
+		\Bigg)
+		-
+		\frac{1}{2}
+		\Bigg(
+			\ln(\Omega^2)\ln\Big( \frac{\mu}{\Lambda-\mu} \Big)
+			-
+			2\ln(2\mu)\ln(2\Lambda-4\mu)
+	\nonumber
+	\\[.5em]
+	&     	
+			+
+			\ln(2\Lambda-2\mu)\ln(4(\Lambda-2\mu)^2)
+			+
+			2\text{Li}_{2}(\frac{\Lambda-2\mu}{-\mu})
+		\Bigg)
+		-
+		\frac{1}{2}
+		\Bigg(
+	\nonumber
+	\\[.5em]
+	& 
+			\ln\Big( \frac{\Lambda+\mu}{\Lambda-\mu} \big)\,\ln(1+ \frac{4\Lambda^2}{\Omega^2})
+			+
+			\ln\Big( \frac{\Lambda-\mu}{\mu} \Big)\,\ln\Big( \frac{\Lambda}{\Lambda-2\mu} \Big) 
+			-
+			\text{Li}_{2}(\frac{\Lambda-2\mu}{-\mu})  
+	\nonumber
+	\\[.5em]
+	&   
+			+
+			\text{Li}_{2}(-\frac{\Lambda}{\mu})
+		\Big)		
+		-
+		\frac{1}{2}
+		\Bigg(
+			\ln\big(\frac{K^2}{\Lambda+\mu}\big)\,\ln\big(1+4\frac{\Lambda^2}{\Omega^2}\big)
+		\Bigg)
+	\Bigg]
+	\,.
+\end{align}
+where, in the last line, we have only kept singular terms in $\Omega$ in the limit $\Omega\to0$. Note that taking the two limits $\Omega\to0$ and $\mu\to0$ do not commute. The latter should reduce to Eq.~[\ref{Gamma_PP_Zmu}]. Taking the derivative of the above expression w.r.t. $\ln\Lambda$, for the leading term in the Taylor expansion in $\Omega$ I find:
+
+\begin{equation}
+	\Gamma_{\text{\tiny PP}}^{\mu>0}(0,\Omega\to0)
+	\,\approx\, 
+	\frac{-1}{(2\pi)^2}
+	\ln\Big(\frac{\Lambda^2-\mu^2}{K^4}\Big)
+	\,.
+\end{equation}
+
+
+
+
+
+
+
+\begin{comment}
+
+
+
+
+
+%--------------------------------
+\newpage
+\section{$\beta$-Functions}
+
+Finally, the $\beta$-functions can be determined...
+\begin{subequations} \label{App_II-Beta_functions}  
+\begin{align}
+	\dot{g} =& -\frac{g^2}{2\pi^2}\log K^2
+	\label{App_II-Beta_functions:g} 
+	\\[.75em]
+	\dot{g}^{\{1\}}_{\text{\tiny PH}} =& -g^{\{1\}}_{\text{\tiny PH}} + \frac{g^2}{2(2\pi)^2}8 K^2
+	\label{App_II-Beta_functions:g1} 
+	\\[.75em]
+	\dot{g}^{\{2)}_{\text{\tiny PH}} =& -2g^{\{2\}}_{\text{\tiny PH}} + \frac{g^2}{2(2\pi)^2}
+	\Big( 
+		19.7\log\frac{\mu}{K^2} 
+		+  
+		101
+		-
+		5.6K^4
+	\Big)
+	\label{App_II-Beta_functions:g2} 
+	\\[.75em]
+	\dot{g}^{\{3\}}_{\text{\tiny PH}} =& -3g^{\{3\}}_{\text{\tiny PH}} + \frac{g^2}{2(2\pi)^2}
+	\Big( 
+		-
+		\frac{1.87}{\mu}
+		+
+		\Big[
+			22.8K^2
+			+
+			\frac{86}{K^2}
+		\Big]\log\frac{\mu}{K^2}
+		+
+		4.11K^6 
+		+
+		162K^2 
+	\Big)
+	\label{App_II-Beta_functions:g3}   
+	\\[.75em]
+	\dot{g}^{\{4\}}_{\text{\tiny PH}} =& -4g^{\{4\}}_{\text{\tiny PH}} + \frac{g^2}{2(2\pi)^2}
+	\Big( 
+		-
+			\frac{0.13}{\mu^2}
+			-
+			2.06\frac{K^2}{\mu}
+			+
+			\Big[
+				\frac{237}{K^4}
+				+
+				255
+				+
+				8.7 K^4
+			\Big]\log\frac{\mu}{K^2}
+	\nonumber \\
+	& 
+			+
+			1462
+			-
+			71.5K^4
+			-
+			3.16K^8 
+	\Big)
+	\label{App_II-Beta_functions:g4}  
+	\\[.75em]
+	\dot{g}^{\{5\}}_{\text{\tiny PH}} =& -5g^{\{5\}}_{\text{\tiny PH}} + \frac{g^2}{2(2\pi)^2}
+	\Big( 
+			-
+			\frac{0.014}{\mu^3}
+			-
+			\frac{0.138 K^2}{\mu^2}
+			-
+			\frac{0.326}{K^2\mu^2}
+			-
+			0.716\frac{K^4}{\mu}
+			-
+			\frac{17.13}{\mu}
+	\nonumber \\
+	& 
+			-
+			\frac{12.98}{K^4\mu}
+			+\Big[
+				-
+				1.262K^6 
+				+
+				305K^2
+				+
+				\frac{1082}{K^2}
+				+
+				\frac{483}{K^6}
+			\Big]\log\frac{\mu}{K^2} 
+			+
+			2.52K^{10}
+	\nonumber \\
+	& 
+			+
+			9.235K^6
+			+
+			1987K^2
+	\Big)
+	\label{App_II-Beta_functions:g5}
+	\,.
+\end{align}
+\end{subequations}
+
+
+
+
+\end{comment}
+
+
+
+
+
+
+
+
+
+
+
+%--------------------------------
+\newpage
+\section{Computation of $\chi''_{\text{\tiny PH}}(q\hat{x},\Omega)$}
+
+
+Here we present the computation of the imaginary part of the one-loop particle-hole susceptibility, $\chi''_{\text{\tiny PH}}(q\hat{x},\Omega)$, for the dispersion $\varepsilon_{\mathbf{k}}=k_x^2-k_y^2$ at a finite chemical potential and with a smooth momentum cutoff $K$. This susceptibility is obtained from the imaginary-time (Matsubara) susceptibility $\chi_{\text{\tiny PH}}(q\hat{x},\Omega)$ by analytically continuing $\chi_{\text{\tiny PH}}(q\hat{x},i\Omega\to \Omega+ i0^+)$~\cite{NegeleOrland1998}. The imaginary-time particle-hole susceptibility is given by:
+
+\begin{align}
+	\chi_{\text{\tiny PH}}(q\hat{x},i\Omega)
+	&\,=\,
+	\frac{-1}{(2\pi)^2} \int\text{d}\mathbf{k}\,
+	\frac{\theta(\xi_{\mathbf{k}}-\mu)-\theta(\xi_{\mathbf{k+q}}-\mu)}{i\Omega+\xi_\mathbf{k}-\xi_\mathbf{k+q}}
+	\,\,e^{-\frac{|\mathbf{k}|^2+|\mathbf{k+q}|}{K^2}}
+	\,.
+\end{align}
+Following the same steps as in Section~[\ref{Appendix_II-GammaPH_NZmu}] (see Eq.~[\ref{App_II-Equation_4}]), the above integral is written as:
+\begin{align}
+	\chi_{\text{\tiny PH}}(\mathbf{q},i\Omega)
+	\,=\,&
+	\frac{-2}{2(2\pi)^2}
+	\text{Re}
+	\Bigg\{
+	\int_{0}^{\infty}\text{d}X\,\int_{-1}^{1}\text{d}t\,\,
+	\frac{X}{i\Omega + X}
+	\frac{e^{-\frac{1}{K^2}(tX+\frac{X^2}{q^2}-2\mu-q^2)}}{\sqrt{(X+q^2)^2-4q^2(\frac{t+1}{2}X+\mu)}}
+	\Bigg\}	
+	\nonumber \\[.5em]
+	\,\,&
+	\frac{-1}{(2\pi)^2}
+	\int_{0}^{\infty}\text{d}X\,\int_{-1}^{1}\text{d}t\,\,
+	\frac{X^2}{\Omega^2 + X^2}
+	\frac{e^{-\frac{1}{K^2}(tX+\frac{X^2}{q^2}-2\mu-q^2)}}{\sqrt{(X+q^2)^2-4q^2(\frac{t+1}{2}X+\mu)}}
+	\label{App_II-ImTimeChi_PH}
+	\,,
+\end{align}
+with the constraint $X^2 + 2tq^2X + q^4 - 4q^2\mu\geq0$. The constraint $X^2 + 2tq^2X + q^4 - 4q^2\mu\geq0$, for a generic $q$, implies $X\not\in(X_-,X_+)$ where $X_\pm=-tq^2\pm\sqrt{4q^2\mu-q^4(1-t^2)}$. As in Section~[\ref{Appendix_II-GammaPH_NZmu}], for $q\leq 2\sqrt{\mu}$ this constraint restricts the integration over $X$ to $[X_{\text{\tiny min}},\infty)$ where $X_{\text{\tiny min}}=-tq^2+\sqrt{4q^2\mu-q^4(1-t^2)}$. 
+
+
+Since we are interested in $\chi''_{\text{\tiny PH}}(\mathbf{q},\Omega)$ not only at small $q$ ($q\leq 2\sqrt{\mu}$) but also as $q\simeq \mathbf{O}(\mu)$ we need to consider the two cases $q\leq 2\sqrt{\mu}$ and $q > 2\sqrt{\mu}$ separately.
+
+
+
+%===================================
+\section*{\centering$q<2\sqrt{\mu}$}
+
+For $q<2\sqrt{\mu}$, using $X\to\mathcal{Y} = X - X_{\text{\tiny min}}$, the above integral becomes:
+
+\begin{align}
+	\chi_{\text{\tiny PH}}(\mathbf{q},i\Omega)
+	\,=\,&
+	\frac{-1}{(2\pi)^2}e^{\frac{2\mu+q^2}{K^2}}
+	\int_{0}^{\infty}\text{d}\mathcal{Y}\,\int_{-1}^{1}\text{d}t\,\,
+	\frac{(\mathcal{Y}-tq^2+\sqrt{4q^2\mu-q^4(1-t^2)})^2}{-(i\Omega)^2 + (\mathcal{Y}-tq^2+\sqrt{4q^2\mu-q^4(1-t^2)})^2}
+	\nonumber \\[.5em]
+	& \qquad \qquad \qquad
+	\frac{e^{-\frac{t}{K^2}(\mathcal{Y}-tq^2+\sqrt{4q^2\mu-q^4(1-t^2)})-\frac{1}{q^2K^2}(\mathcal{Y}-tq^2+\sqrt{4q^2\mu-q^4(1-t^2)})^2}}
+	     {\sqrt{\mathcal{Y}(\mathcal{Y}+2\sqrt{4q^2\mu-q^4(1-t^2)})}}
+	\,.
+\end{align}
+Analytically continuing $i\Omega\to\Omega + i0^+$, we find the retarded particle hole susceptibility:
+\begin{align}
+	\chi^{R}_{\text{\tiny PH}}(\mathbf{q},\Omega)
+	\,=\,&
+	\frac{-e^{\frac{2\mu+q^2}{K^2}}}{(2\pi)^2}
+	\int_{0}^{\infty}\text{d}\mathcal{Y}\int_{-1}^{1}\text{d}t
+	\frac{(\mathcal{Y}-tq^2+\sqrt{4q^2\mu-q^4(1-t^2)})^2}{-(\Omega+i0^+)^2 + (\mathcal{Y}-tq^2+\sqrt{4q^2\mu-q^4(1-t^2)})^2}
+	\nonumber
+	\\[.5em]
+	&
+	\frac{e^{-\frac{t}{K^2}(\mathcal{Y}-tq^2+\sqrt{4q^2\mu-q^4(1-t^2)})-\frac{1}{q^2K^2}(\mathcal{Y}-tq^2+\sqrt{4q^2\mu-q^4(1-t^2)})^2}}
+	     {\sqrt{\mathcal{Y}(\mathcal{Y}+2\sqrt{4q^2\mu-q^4(1-t^2)})}}
+	\,.
+\end{align}
+In the part of the integrand that contains $\Omega$, using the Dirac identity, we get:
+\begin{align}
+	\frac{1}{\underbrace{(\mathcal{Y}-tq^2+\sqrt{4q^2\mu-q^4(1-t^2)})^2}_{\mathcal{X}>0}-(\Omega+i0^+)^2}
+	\,=\,&
+	\frac{1}{(\mathcal{X}-\Omega-i0^+)(\mathcal{X}+\Omega+i0^+)}
+	\,.
+\end{align} 
+Without loss of generality, let us assume $\Omega>0$. We can write:
+\begin{align}
+	\frac{1}{\mathcal{X}-(\Omega+i0^+)^2}
+	\,=\,&
+	\frac{1}{(\mathcal{X}-\Omega-i0^+)(\mathcal{X}+\Omega)}
+	\,.
+\end{align}
+Therefore, for $\Omega>0$, the imaginary part of the retarded real-time particle-hole susceptibility is given by:
+\begin{align}
+	\chi''_{\text{\tiny PH}}(\mathbf{q},\Omega)
+	\,=\,
+	\frac{-(-\pi)}{(2\pi)^2}e^{\frac{2\mu+q^2}{K^2}}
+	&\int_{0}^{\infty}\text{d}\mathcal{Y}\,\int_{-1}^{1}\text{d}t\,\,
+	\frac{(\mathcal{Y}-tq^2+\sqrt{4q^2\mu-q^4(1-t^2)})^2}{ \Omega + \mathcal{Y}-tq^2+\sqrt{4q^2\mu-q^4(1-t^2)}}
+	\nonumber	
+	\\[.5em]
+	&  
+	\frac{e^{-\frac{t}{K^2}(\mathcal{Y}-tq^2+\sqrt{4q^2\mu-q^4(1-t^2)})-\frac{1}{q^2K^2}(\mathcal{Y}-tq^2+\sqrt{4q^2\mu-q^4(1-t^2)})^2}}
+	     {\sqrt{\mathcal{Y}(\mathcal{Y}+2\sqrt{4q^2\mu-q^4(1-t^2)})}}
+	\nonumber	
+	\\[.5em]
+	&
+	\delta\Big( \mathcal{Y}-tq^2+\sqrt{4q^2\mu-q^4(1-t^2)} - \Omega \Big)
+	\,.
+\end{align}
+Imposing the $\delta$-function, we finally obtain:
+\begin{align}
+	&\chi''_{\text{\tiny PH}}(\mathbf{q},\Omega)
+	\,=\,
+	-\frac{\Omega}{8\pi}\,	
+	e^{\frac{2\mu+q^2}{K^2}-\frac{\Omega^2}{q^2K^2}}\,\,
+	\int_{-1}^{1}\text{d}t\,\,
+	\frac{e^{-\frac{t\Omega}{K^2}}}
+	     {\sqrt{\Omega^2 + 2 t\Omega q^2 - 4q^2\mu + q^4 }}
+	\,.
+	\,.
+\end{align}
+with the constraint $\Omega + t q^2 - \sqrt{4q^2\mu-q^4(1-t^2)} \geq 0$. This constraint restricts the integration over $t$: 
+\begin{equation}
+	t\geq \frac{q^2}{2\Omega} ( \frac{4\mu}{q^2} - 1 - \frac{\Omega^2}{q^4} )
+\end{equation}
+Finally we find:
+\begin{align}
+	\chi''_{\text{\tiny PH}}(\mathbf{q},\Omega)
+	\,=\,
+	\color{blue}
+	-\frac{\Omega}{8\pi}\,	
+	e^{\frac{2\mu+q^2}{K^2}-\frac{\Omega^2}{q^2K^2}}\,\,
+	\int_{\text{Max}\{ -1 , \frac{4\mu-q^2}{2\Omega^2} - \frac{\Omega}{2q^2} \} }^{1}\text{d}t\,\,
+	\frac{e^{-\frac{t\Omega}{K^2}}}
+	     {\sqrt{\Omega^2 + 2 t\Omega q^2 - 4q^2\mu + q^4 }}
+	\,.
+	\label{ql2smu}
+\end{align}
+
+
+
+%===================================
+\section*{\centering $q\geq2\sqrt{\mu}$}
+
+
+Next, we consider the $q\geq2\sqrt{\mu}$. Starting from Eq.~[\ref{App_II-ImTimeChi_PH}] after analytically continuing $i\Omega\to\Omega + i0^+$ and assuming that $\Omega>0$, we get:
+\begin{align}
+	\chi^{R}_{\text{\tiny PH}}(\mathbf{q},\Omega>0)
+	\,=\,&
+	\frac{-1}{(2\pi)^2}
+	\int_{0}^{\infty}\text{d}X\,\int_{-1}^{1}\text{d}t\,\,
+	\frac{X^2}{(X+\Omega)(X-\Omega-i0^+)}
+	\nonumber	
+	\\
+	&
+	\frac{e^{-\frac{1}{K^2}(tX+\frac{X^2}{q^2}-2\mu-q^2)}}{\sqrt{(X+q^2)^2-4q^2(\frac{t+1}{2}X+\mu)}}
+	\label{App_II_RealChiPH_qg2mu_0}
+	\,,
+\end{align}
+with the constraint $X^2+q^4 + 2t q^2X -4q^2\mu\geq0$. Imposing this constraint restricts the $X$ and $t$ integrals as following:
+\begin{align}
+	\chi^{R}_{\text{\tiny PH}}(q\geq2\sqrt{\mu},\Omega>0)
+	\,=\,
+	\frac{-1}{(2\pi)^2}
+	\Bigg[
+	&
+		\underbrace{
+			\int_{0}^{\infty}\text{d}X\,
+			\int_{-\sqrt{1-\frac{4\mu}{q^2}}}^{1}\text{d}t\,\,
+		}_{I_1}	
+		+
+		\underbrace{
+			\int_{X_+}^{\infty}\text{d}X\,
+			\int_{-1}^{-\sqrt{1-\frac{4\mu}{q^2}}}\text{d}t\,\,
+		}_{I_2}	
+	\nonumber	
+	\\[.5em]
+	&
+		+
+		\underbrace{
+			\int_{0}^{X_-}\text{d}X\,
+			\int_{-1}^{-\sqrt{1-\frac{4\mu}{q^2}}}\text{d}t\,\,
+		}_{I_3}	
+	\Bigg]
+	(\cdots)
+	\,,
+\end{align}
+where, $(\cdots)$ stands for the integrand, which is the integrand in Eq.[\ref{App_II_RealChiPH_qg2mu_0}]. We compute the above three integrals $I_1$, $I_2$ and $I_3$ separately. 
+
+For $I_1$ we find:
+\begin{align}
+	I_1
+	\,=\,&
+	\frac{-1}{(2\pi)^2}
+	\int_{0}^{\infty}\text{d}X\,
+	\int_{-\sqrt{1-\frac{4\mu}{q^2}}}^{1}\text{d}t\,\,
+	\frac{X^2}{(X+\Omega)(X-\Omega-i0^+)}
+	\frac{e^{-\frac{1}{K^2}(tX+\frac{X^2}{q^2}-2\mu-q^2)}}{\sqrt{X^2+q^4 + 2t q^2X -4q^2\mu}}
+	\,.
+\end{align}
+Thus the imaginary part of $I_I$ is given by:
+\begin{align}
+	\text{Im}\{I_1\}
+	\,=\,&
+	\frac{-\pi}{(2\pi)^2}
+	\int_{0}^{\infty}\text{d}X\,
+	\int_{-\sqrt{1-\frac{4\mu}{q^2}}}^{1}\text{d}t\,\,
+	\frac{X^2\delta(X-\Omega)}{(X+\Omega)}
+	\frac{e^{-\frac{1}{K^2}(tX+\frac{X^2}{q^2}-2\mu-q^2)}}{\sqrt{X^2+q^4 + 2t q^2X -4q^2\mu}}
+	\nonumber \\
+	=\,&
+	\frac{-\pi}{(2\pi)^2}
+	\int_{-\sqrt{1-\frac{4\mu}{q^2}}}^{1}\text{d}t\,\,
+	\frac{\Omega}{2}
+	\frac{e^{-\frac{1}{K^2}(t\Omega+\frac{\Omega^2}{q^2}-2\mu-q^2)}}{\sqrt{\Omega^2+q^4 + 2t q^2\Omega - 4q^2\mu}}
+	\label{App_II_RealChiPH_qg2mu_Im-I_1}
+	\,.
+\end{align}
+
+$I_2$ is given by a similar integral to the one for the case $q<2\sqrt{\mu}$,
+\begin{align}
+	I_2
+	\,=\,&
+	\frac{-1}{(2\pi)^2}
+	\int_{X_+}^{\infty}\text{d}X\,
+	\int_{-1}^{-\sqrt{1-\frac{4\mu}{q^2}}}\text{d}t\,\,
+	\frac{X^2}{(X+\Omega)(X-\Omega-i0^+)}
+	\frac{e^{-\frac{1}{K^2}(tX+\frac{X^2}{q^2}-2\mu-q^2)}}{\sqrt{X^2+q^4 + 2t q^2X -4q^2\mu}}
+	\,,
+\end{align}
+except that the upper limit of the $t$ integral is different. Thus for the imaginary part of $I_2$ we obtain:
+\begin{align}
+	\text{Im}\{I_2\}
+	\,=\,&
+	\frac{-\Omega}{8\pi}\,	
+	e^{\frac{2\mu+q^2}{K^2}-\frac{\Omega^2}{q^2K^2}}\,\,
+	\int_{ \text{Max}\{ -1 , \frac{4\mu-q^2}{2\Omega} - \frac{\Omega}{2q^2} \} }^{-\sqrt{1-\frac{4\mu}{q^2}}}\text{d}t\,\,
+	\frac{e^{-\frac{t\Omega}{K^2}}}
+	     {\sqrt{\Omega^2 + 2 t\Omega q^2 - 4q^2\mu + q^4}}
+	\label{App_II_RealChiPH_qg2mu_Im-I_2}
+	\,,
+\end{align}
+
+For $I_3$ we have:
+\begin{align}
+	I_3
+	=
+	\frac{-1}{(2\pi)^2}
+	\int_{0}^{X_-}\text{d}X
+	\int_{-1}^{-\sqrt{1-\frac{4\mu}{q^2}}}\text{d}t
+	\frac{X^2}{(X+\Omega)(X-\Omega-i0^+)}
+	\frac{e^{-\frac{1}{K^2}(tX+\frac{X^2}{q^2}-2\mu-q^2)}}{\sqrt{X^2+q^4 + 2t q^2X -4q^2\mu}}
+	\,,
+\end{align}
+Using $X\to x=X_-X$, the above integral becomes:
+\begin{align}
+	I_3
+	\,=\,&
+	\frac{-1}{(2\pi)^2}
+	\int_{0}^{1}\text{d}x\,
+	\int_{-1}^{-\sqrt{1-\frac{4\mu}{q^2}}}\text{d}t\,\,
+	\frac{X_-x^2}{(x+\frac{\Omega}{X_-})(x-\frac{\Omega}{X_-}-i0^+)}
+	\frac{e^{-\frac{1}{K^2}(tX_x+\frac{X_-^2}{q^2}x^2-2\mu-q^2)}}{\sqrt{X_{-}^{2}x^2+q^4 + 2t q^2X_-x -4q^2\mu}}
+	\,,
+\end{align}
+Thus the imaginary part of $I_3$ is given by:
+\begin{align}
+	\text{Im}\{I_3\}
+	\,=\,&
+	\frac{-\pi}{(2\pi)^2}
+	\int_{0}^{1}\text{d}x\,
+	\int_{-1}^{-\sqrt{1-\frac{4\mu}{q^2}}}\text{d}t\,\,
+	\frac{X_-x^2\delta{(x-\frac{\Omega}{X_-})}}{(x+\frac{\Omega}{X_-})}
+	\frac{e^{-\frac{1}{K^2}(tX_x+\frac{X_-^2}{q^2}x^2-2\mu-q^2)}}{\sqrt{X_{-}^{2}x^2+q^4 + 2t q^2X_-x -4q^2\mu}}
+	\nonumber \\[.5em]
+	\,=\,&
+	\frac{-\Omega}{8\pi}e^{-\frac{1}{K^2}(\frac{\Omega^2}{q^2}-2\mu-q^2)}
+	\int_{-1}^{-\sqrt{1-\frac{4\mu}{q^2}}}\text{d}t\,
+	\frac{\theta\big(1-\frac{\Omega}{X_-(t)}\big)\,e^{-\frac{t\Omega}{K^2}}}
+	     {\sqrt{\Omega^2+q^4 + 2t q^2\Omega -4q^2\mu}}
+	\label{App_II_RealChiPH_qg2mu_Im-I_3}
+	\,,
+\end{align}
+The Heaviside function imposes the constraint $\frac{\Omega}{q^2}\leq-t-\sqrt{\frac{4\mu}{q^2}+t^2-1}$. 
+
+
+Putting together the imaginary parts of $I_1$, $I_2$ and $I_3$ (Eqs.~[\ref{App_II_RealChiPH_qg2mu_Im-I_1},\ref{App_II_RealChiPH_qg2mu_Im-I_2},\ref{App_II_RealChiPH_qg2mu_Im-I_3}]), we finally obtain:
+\begin{align}
+	&
+	\chi''_{\text{\tiny PH}}(q\geq2\sqrt{\mu},\Omega>0)
+	\,=\,
+	\color{blue}
+	\frac{-\Omega\,e^{\frac{2\mu+q^2}{K^2}-\frac{\Omega^2}{q^2K^2}}}{2(2\pi)^2}
+	\Bigg[
+		\int_{-\sqrt{1-\frac{4\mu}{q^2}}}^{1}
+	\,+\, 
+		\int_{ \text{Max}\{ -1 , \frac{4\mu-q^2}{2\Omega} - \frac{\Omega}{2q^2} \} }^{-\sqrt{1-\frac{4\mu}{q^2}}}
+	\,+\,
+	\nonumber
+	\\[.5em]
+	&
+	\color{blue}
+		\theta(\frac{4\mu-q^2}{2\Omega}+\frac{\Omega}{2q^2})		
+		\int_{\text{Max}\{ -1 , \frac{4\mu-q^2}{2\Omega}-\frac{\Omega}{2q^2} \}}^{-\sqrt{1-\frac{4\mu}{q^2}}}
+	\Bigg]
+	\frac{e^{-\frac{t\Omega}{K^2}}\,\text{d}t}{\sqrt{\Omega^2+q^4 + 2t q^2\Omega -4q^2\mu}}
+	\,. 
+	\label{qg2smu} 
+\end{align}
+The Heaviside function that accompanies the last integral imposes the constraint $( \frac{\Omega}{q^2} + \text{Max}\{ -1 , \frac{4\mu-q^2}{2\Omega}-\frac{\Omega}{2q^2} \}) <0$ as we are assuming $4\mu\leq q^2$. 
+
+
+
+
+
+
+%===================================
+\section*{\centering $\mu=0$}
+
+Since we have computed $\chi''_{\text{\tiny PH}}(q,\Omega>0)$ for $\mu>0$ and a generic $q$, we can easily determine the $\mu=0$ susceptibility $\chi''_{\text{\tiny PH}}(q,\Omega>0)$ by simply taking the limit $\mu\to0$ (the zero chemical potential case). We find:
+
+\begin{align}
+	\chi''_{\text{\tiny PH}}(q,\Omega>0)
+	\,=\,&
+	\color{blue}
+	\frac{-\Omega}{2(2\pi)^2}\,e^{\frac{q^2}{K^2}-\frac{\Omega^2}{q^2K^2}}\,
+	\int_{-1}^{1}
+	\frac{e^{-\frac{t\Omega}{K^2}}\,\text{d}t}{\sqrt{\Omega^2+q^4 + 2t q^2\Omega}}
+	\,. 
+\end{align}
+
+
+%================================================================

@@ -1,0 +1,16 @@
+\cleardoublepage
+%\phantomsection
+%\addcontentsline{toc}{chapter}{Dedication}
+\chapter*{}%\centering Dedication}
+%\vspace*{\fill}
+\begin{center}
+
+I dedicated this thesis to
+%my \textbf{aunts}, my \textbf{father} and my \textbf{uncle} 
+...
+%without whom I would not have made it this far.
+
+\end{center}
+\vspace*{\fill}
+\vspace*{\fill}
+%\newpage

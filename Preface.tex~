@@ -1,0 +1,29 @@
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Preface}
+\chapter*{\centerline{Preface}}
+%{\centering\bfseries\Large Preface\par}  \vspace{1cm}
+
+
+
+COMING SOON...
+
+\newpage
+
+\vspace*{\fill}
+
+\begin{center}
+	\begin{minipage}[t]{0.9\textwidth}
+		\textcolor{gray}{\calligra \huge 
+		``A method is more important than a discovery, since the right method will lead to new and even more important discoveries.'' %\hfill -- Lev Landau
+		}
+
+		\vspace{1cm}
+		{\hfill \textcolor{gray}{{\calligra \Large -- Lev Landau}}}
+	\end{minipage}
+	\vspace{1cm}
+\end{center} 
+
+\vspace*{\fill}
+
+\vspace*{\fill}

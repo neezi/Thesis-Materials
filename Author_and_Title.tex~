@@ -1,0 +1,12 @@
+%===================================================
+\newcommand{\ThesisTitle}{Renormalization Group Approach to Two Strongly Correlated Condensed Matter Models}
+\newcommand{\ThesisAuthor}{Homer Simpson}
+\newcommand{\ShortThesisAuthor}{H. Simpson}
+\newcommand{\ThesisInstitution}{McMaster University}
+\newcommand{\AuthorsPreviousDegrees}{B.Sc., X University of Technology (20??), M.Sc., Y University (20??)}
+\newcommand{\AuthorsPreviousDegreesFirstPage}{B.Sc., M.Sc.}
+\newcommand{\ThesisAdviser}{Master Yoda}
+\newcommand{\ThesisDegreeLong}{Doctor of Philosophy} %REPLACE WITH Masters of Science
+\newcommand{\ThesisDegreeShort}{Ph.D. Thesis} %REPLACE WITH M.Sc.
+\newcommand{\ThesisYear}{2014}
+%===================================================

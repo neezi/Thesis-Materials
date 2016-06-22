@@ -1,0 +1,19 @@
+TWO WAYS TO COMPILE:
+
+FIRST WAY:
+>> pdflatex ./Thesis.tex
+>> bibtex Thesis 
+>> mpost ./Feynman.mp    %TO GENERATE Feynman DIAGRAMS
+>> pdflatex ./Thesis.tex
+>> pdflatex ./Thesis.tex
+>> makeindex Thesis %TO GENERATE THE INDEX PAGE
+
+
+SECOND WAY:
+USE LaTeXMk WHICH AUTOMATICALLY COMPILES EVERYTHING EVERYTIME A FILE IS UPDATED
+
+>> latexmk -pvc -pdf ./Thesis.tex
+
+
+
+

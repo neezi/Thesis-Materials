@@ -1,0 +1,27 @@
+%================================================================
+\chapter{Appendix to Chapter 2}
+%\chapter[toc version]{doc version}
+\chaptermark{Appendix to Chapter 2}
+\label{Appendix_for_Ch_2}
+%================================================================
+
+  
+In this appendix I present bla bla bla...
+
+
+
+%==============================
+\section{Section 1 of Appendix 1}
+\label{App_1-1}
+
+
+
+
+%==============================
+\newpage
+\section{Section 2 of Appendix 1}
+\label{App_1-2} 
+
+
+
+%================================================================ 
